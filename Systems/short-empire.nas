@@ -2,7 +2,7 @@
 ##
 ## Short S.23 'C'-class Empire flying boat
 ##
-##  Copyright (C) 2008- 2011  Anders Gidenstam  (anders(at)gidenstam.org)
+##  Copyright (C) 2008 - 2012  Anders Gidenstam  (anders(at)gidenstam.org)
 ##  This file is licensed under the GPL license v2 or later.
 ##
 ###############################################################################
@@ -36,6 +36,20 @@ setlistener("/sim/signals/fdm-initialized", func {
 controls.adjPropeller = func (d) {
     controls.adjEngControl("propeller-pitch", (d > 0 ? 10000.0 : -10000.0));
 }
+
+var flap_control_p = "controls/flight/flap-motor";
+
+# The flap control is moves the control switch towards in or out.
+controls.flapsDown = func(step) {
+    if (!step) return;
+    var v = getprop(flap_control_p);
+    if (step < 0) v -= 1;
+    if (step > 0) v += 1;
+    if (v < -1) v = -1;
+    if (v > 1)  v = 1;
+    setprop(flap_control_p, v);
+}
+
 
 ###############################################################################
 # Debug display - stand in instrumentation.
@@ -222,9 +236,9 @@ var dialog = {
         content.set("default-padding", 5);
         props.globals.initNode("sim/about/text",
              "Short S.23 'C'-class Empire flying boat for FlightGear\n" ~
-             "Copyright (C) 2008 - 2011  Anders Gidenstam, Ron Jensen, AJ MacLeod\n\n" ~
+             "Copyright (C) 2008 - 2012  Anders Gidenstam, Ron Jensen, AJ MacLeod\n\n" ~
              "FlightGear flight simulator\n" ~
-             "Copyright (C) 1996 - 2011  http://www.flightgear.org\n\n" ~
+             "Copyright (C) 1996 - 2012  http://www.flightgear.org\n\n" ~
              "This is free software, and you are welcome to\n" ~
              "redistribute it under certain conditions.\n" ~
              "See the GNU GENERAL PUBLIC LICENSE Version 2 for the details.",

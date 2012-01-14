@@ -2,7 +2,7 @@
 <!--
   Sperry A-2 Gyropilot for FlightGear.
 
-  Copyright (C) 2010  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2010 - 2012  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
 -->
 <PropertyList>
@@ -18,14 +18,14 @@
   <heading-bug-deg>instrumentation/sperry-autopilot[0]/settings/heading-bug-deg</heading-bug-deg>
   <indicated-heading-deg>instrumentation/sperry-autopilot[0]/heading-indicator/indicated-heading-deg</indicated-heading-deg>
   <heading-offset-deg>instrumentation/sperry-autopilot[0]/heading-indicator/offset-deg</heading-offset-deg>
-  <dg-caged>instrumentation/sperry-autopilot[0]/heading-indicator/caged</dg-caged>
+  <dg-caged>instrumentation/sperry-autopilot[0]/heading-indicator/caged-flag</dg-caged>
   <!-- Slip-skid ball -->
   <indicated-slip-skid>instrumentation/sperry-autopilot[0]/slip-skid-ball/indicated-slip-skid</indicated-slip-skid>
 
   <!-- Attitude control -->
   <pitch-bug-deg>instrumentation/sperry-autopilot[0]/settings/pitch-bug-deg</pitch-bug-deg>
   <indicated-pitch-deg>instrumentation/sperry-autopilot[0]/attitude-indicator/indicated-pitch-deg</indicated-pitch-deg>
-  <ai-caged>instrumentation/sperry-autopilot[0]/attitude-indicator/caged</ai-caged>
+  <ai-caged>instrumentation/sperry-autopilot[0]/attitude-indicator/caged-flag</ai-caged>
 
   <!-- Roll control -->
   <roll-bug-deg>instrumentation/sperry-autopilot[0]/settings/roll-bug-deg</roll-bug-deg>
@@ -456,16 +456,31 @@
   </action>  
  </animation>
 
-
- <!-- animation> 
+ <animation>
   <type>material</type>
+  <object-name>AI_caging_knob_base</object-name>
+  <object-name>DG_caging_knob_base</object-name>
+  <object-name>aileron_knob_base</object-name>
+  <object-name>elevator_knob_base</object-name>
+  <object-name>level_knob_base</object-name>
+  <object-name>rudder_knob_base</object-name>
+  <object-name>DG_course_line</object-name>
+  <object-name>DG_heading_card</object-name>
+  <object-name>DG_rudder_card</object-name>
+  <object-name>DG_slip_tube_back</object-name>
+  <object-name>AI_roll_card</object-name>
+  <object-name>AI_aircraft_bar</object-name>
+  <object-name>AI_aileron_index</object-name>
+  <object-name>AI_elevator_index</object-name>
+  <object-name>vacuum_gauge_scale</object-name>
+  <object-name>vacuum_gauge_pointer</object-name>
   <emission> 
    <factor-prop>controls/lighting/panel-norm</factor-prop>
    <red>0.75</red>
    <green>0.25</green>
    <blue>0.25</blue>
   </emission>
- </animation -->
+ </animation>
 
  <animation>
   <type>noshadow</type>
