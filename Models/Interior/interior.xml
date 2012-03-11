@@ -42,6 +42,11 @@
    <heading-deg>-105.0</heading-deg>
    <pitch-deg>0.0</pitch-deg>
   </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
  </model>
 
  <model>
@@ -55,6 +60,29 @@
    <heading-deg>-108.0</heading-deg>
    <pitch-deg>0.0</pitch-deg>
   </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Light switch panel</name>
+  <path>Aircraft/Short_Empire/Models/Interior/light_switch_panel.xml</path>
+  <offsets>
+   <!-- x/y/z == forward/left/up -->
+   <x-m> -2.300 </x-m>
+   <y-m>  0.920 </y-m>
+   <z-m>  1.190 </z-m>
+   <heading-deg>-100.0</heading-deg>
+   <pitch-deg>0.0</pitch-deg>
+  </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
  </model>
 
  <!-- Captain's compass -->
@@ -145,6 +173,11 @@
    <heading-deg>180.0</heading-deg>
    <pitch-deg>20.0</pitch-deg>
   </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
  </model>
 
  <!-- Star observer's instruments ==========================================-->
@@ -157,6 +190,11 @@
    <y-m> -0.50 </y-m>
    <z-m>  2.00 </z-m>
   </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
  </model>
 
  <!-- Engine instrument panel ==============================================-->
