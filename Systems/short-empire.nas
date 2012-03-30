@@ -30,12 +30,14 @@ var ground = func {
 }
 
 
-
+var _short_empire_initialized = 0;
 setlistener("/sim/signals/fdm-initialized", func {
+    if (_short_empire_initialized) return;
     aircraft.livery.init("Aircraft/Short_Empire/Models/Liveries");
     settimer(ground, 0.0);
     print("Hydrodynamics initialized.");
     copilot.init();
+    _short_empire_initialized = 1;
 });
 
 
