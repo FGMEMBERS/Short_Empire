@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<!-- altimeter
+  Copyright (C) 2008  AJ MacLeod.
+  Copyright (C) 2010 - 2012  Anders Gidenstam.
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList> 
+
+ <!-- Overlay these for the second altimeter etc. -->
+ <params>
+  <indicated-altitude-ft>instrumentation/altimeter/indicated-altitude-ft</indicated-altitude-ft>
+  <setting-inhg>instrumentation/altimeter/setting-inhg</setting-inhg>
+
+  <!-- Lighting. 4W bulb. -->
+  <light-power-W type="string"/>
+ </params>
+
+ <path>Aircraft/spitfireIX/Models/Instruments/altimeter.ac</path>
+ <texture-path>Aircraft/spitfireIX/Models/Instruments/</texture-path>
+  
+ <!-- altimeter -->
+   
+ <animation> 
+  <type>rotate</type>
+  <object-name>alt-Needle1</object-name>
+  <property alias="../../params/indicated-altitude-ft"/>
+  <factor>0.36</factor>
+  <center> 
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis> 
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+    
+ <animation> 
+  <type>rotate</type>
+  <object-name>alt-Needle2</object-name>
+  <property alias="../../params/indicated-altitude-ft"/>
+  <factor>0.036</factor>
+  <center> 
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis> 
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+   
+ <animation> 
+  <type>rotate</type>
+  <object-name>alt-Needle3</object-name>
+  <property alias="../../params/indicated-altitude-ft"/>
+  <factor>0.0036</factor>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis> 
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ 
+ <animation> 
+  <type>rotate</type>
+  <object-name>knob</object-name>
+  <property alias="../../params/setting-inhg"/>
+  <interpolation> 
+   <entry>
+    <ind>28</ind>
+    <dep>-200</dep>
+   </entry>
+   <entry>
+    <ind>30</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>31.3</ind>
+    <dep>130</dep>
+   </entry>
+  </interpolation>
+  <center> 
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.048</z-m>
+  </center>
+  <axis> 
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>pick</type>
+  <object-name>knob</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/setting-inhg"/>
+    <step>0.01</step>
+   </binding>
+  </action>  
+  <action>
+   <button>1</button>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/setting-inhg"/>
+    <step>-0.01</step>
+   </binding>
+  </action>  
+  <action>
+   <button>3</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/setting-inhg"/>
+    <step>-0.01</step>
+   </binding>
+  </action>
+  <action>
+   <button>4</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/setting-inhg"/>
+    <step>0.01</step>
+   </binding>
+  </action>
+ </animation>
+
+ <animation> 
+  <type>material</type>
+  <object-name>alt-Needle1</object-name>
+  <object-name>alt-Needle2</object-name>
+  <object-name>alt-Needle3</object-name>
+  <object-name>face</object-name>
+  <emission> 
+   <factor-prop alias="../../../params/light-power-W"/>
+   <red>0.19</red>
+   <green>0.063</green>
+   <blue>0.063</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>noshadow</type>
+ </animation>
+
+</PropertyList>

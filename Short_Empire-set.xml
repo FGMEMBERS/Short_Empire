@@ -1,0 +1,687 @@
+<?xml version="1.0"?>
+<!--
+  Short Empire flying boat for FlightGear.
+
+  Copyright (C) 2007 - 2014  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <sim>
+
+  <description>Short S.23 'C'-class Empire flying boat.</description>
+  <author>Anders Gidenstam</author>
+  <aircraft-version>$Id: Short_Empire-set.xml,v 1.66 2014/01/13 20:28:19 anders Exp $</aircraft-version>
+
+  <status type="string">beta</status>
+  <rating>
+   <FDM type="int">3</FDM>
+   <systems type="int">2</systems>
+   <cockpit type="int">3</cockpit>
+   <model type="int">3</model>
+  </rating>
+
+  <flight-model>jsb</flight-model>
+  <aero>Short_S23</aero>
+
+  <presets>
+   <onground type="bool">true</onground>
+  </presets>
+  <startup>
+   <splash-texture>Aircraft/Short_Empire/splash.png</splash-texture>
+  </startup>
+
+  <sound>
+   <audible type="bool">true</audible>
+   <path>Aircraft/Short_Empire/Sounds/Short_S23-sound.xml</path>
+  </sound>
+
+  <model>
+   <path>Aircraft/Short_Empire/Models/Short_Empire-model.xml</path>
+   <livery>
+    <file type="string">Canopus</file>
+   </livery>
+   <mark type="int"/>
+  </model>
+
+  <!-- Aircraft specific help. -->
+  <help include="help.xml"/>
+
+  <systems>
+   <path>Aircraft/Short_Empire/Systems/systems.xml</path>
+  </systems>
+  <instrumentation>
+   <path>Aircraft/Short_Empire/Systems/instrumentation.xml</path>
+  </instrumentation>
+
+  <view n="0">
+   <internal type="bool">true</internal>
+   <config>
+    <!-- x/y/z == right/up/back -->
+    <x-offset-m type="double"> -0.5 </x-offset-m>
+    <y-offset-m type="double">  2.0 </y-offset-m>
+    <z-offset-m type="double">  2.5 </z-offset-m>
+    <pitch-offset-deg type="double"> -10.0 </pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="100">
+   <!-- Copilot's position. -->
+   <name>Copilot View</name>
+   <internal>true</internal>
+   <config>
+    <!-- x/y/z == right/up/back -->
+    <from-model type="bool">true</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <x-offset-m type="double">  0.5 </x-offset-m>
+    <y-offset-m type="double">  2.0 </y-offset-m>
+    <z-offset-m type="double">  2.5 </z-offset-m>
+    <pitch-offset-deg type="double"> -10.0 </pitch-offset-deg>
+    <default-field-of-view-deg type="double"> 65 </default-field-of-view-deg>
+   </config>
+  </view>
+
+
+  <!-- Move the center of the external views. -->
+  <view n="1">
+   <config>
+    <target-z-offset-m type="double"> 10.0 </target-z-offset-m>
+   </config>
+  </view>
+  <view n="2">
+   <config>
+    <target-z-offset-m type="double"> 10.0 </target-z-offset-m>
+   </config>
+  </view>
+  <view n="3">
+   <config>
+    <target-z-offset-m type="double"> 10.0 </target-z-offset-m>
+   </config>
+  </view>
+  <view n="5">
+   <config>
+    <target-z-offset-m type="double"> 10.0 </target-z-offset-m>
+   </config>
+  </view>
+  <view n="6">
+   <config>
+    <target-z-offset-m type="double"> 10.0 </target-z-offset-m>
+   </config>
+  </view>
+
+  <chase-distance-m type="double">-45.0</chase-distance-m>
+
+  <multiplay>
+   <generic>
+    <!-- Wakes. -->
+    <float n="0" alias="/fdm/jsbsim/hydro/coefficients/C_Delta"/>
+    <float n="1" alias="/fdm/jsbsim/hydro/height-agl-ft"/>
+    <float n="2" alias="/fdm/jsbsim/hydro/left-float-submersion-ft"/>
+    <float n="3" alias="/fdm/jsbsim/hydro/right-float-submersion-ft"/>
+    <!-- Exterior lights. -->
+    <float n="4" alias="/systems/electrical/lamps/navigation/port-power-W"/>
+    <float n="5" alias="/systems/electrical/lamps/navigation/starboard-power-W"/>
+    <float n="6" alias="/systems/electrical/lamps/navigation/tail-power-W"/>
+    <float n="7" alias="/systems/electrical/lamps/navigation/anchor-power-W"/>
+    <float n="8" alias="/systems/electrical/lamps/navigation/steaming-power-W"/>
+   </generic>
+  </multiplay>
+
+  <checklists include="Checklists/checklists.xml"/>
+
+  <menubar>
+   <default>
+    <menu n="100">
+     <label>Short Empire</label>
+     <item>
+      <label>About</label>
+      <binding>
+       <command>nasal</command>
+       <script>ShortEmpire.about()</script>
+      </binding>
+     </item>
+     <item>
+      <label>Select Livery</label>
+      <binding>
+       <command>nasal</command>
+       <script>aircraft.livery.dialog.toggle()</script>
+      </binding>
+     </item>
+    </menu>
+   </default>
+  </menubar>
+
+ </sim>
+ 
+ <!-- Set defaults for systems and instruments that need it. -->
+ <systems>
+  <pitot n="1">
+   <serviceable type="bool">1</serviceable>
+  </pitot>
+  <refuel>
+   <serviceable type="bool">0</serviceable>
+  </refuel>
+  <servo-oil n="0">
+   <serviceable type="bool">1</serviceable>
+  </servo-oil>
+  <electrical>
+   <!-- Link FG properties to the JSBSim electrical system. -->
+   <volts alias="/fdm/jsbsim/electrical/bus[0]/voltage-V"/>
+   <outputs>
+    <turn-coordinator alias="../../volts"/> <!-- Should be vacuum driven. -->
+    <adf alias="../../volts"/>
+    <nav alias="../../volts"/>
+    <gps alias="../../volts"/> <!-- Remove when radios have been modelled. -->
+   </outputs>
+  </electrical>
+ </systems>
+
+ <instrumentation>
+  <fuel-gauge n="0">
+   <serviceable type="bool">1</serviceable>
+   <indicated-content-lbs type="double">2525</indicated-content-lbs>
+  </fuel-gauge>
+  <fuel-gauge n="1">
+   <serviceable type="bool">1</serviceable>
+   <indicated-content-lbs type="double">2525</indicated-content-lbs>
+  </fuel-gauge>
+  <fuel-gauge n="2">
+   <serviceable type="bool">1</serviceable>
+   <indicated-content-lbs type="double">1442</indicated-content-lbs>
+  </fuel-gauge>
+  <fuel-gauge n="3">
+   <serviceable type="bool">1</serviceable>
+   <indicated-content-lbs type="double">1442</indicated-content-lbs>
+  </fuel-gauge>
+  <fuel-gauge n="4">
+   <serviceable type="bool">1</serviceable>
+   <indicated-content-lbs type="double">2525</indicated-content-lbs>
+  </fuel-gauge>
+  <fuel-gauge n="5">
+   <serviceable type="bool">1</serviceable>
+   <indicated-content-lbs type="double">2525</indicated-content-lbs>
+  </fuel-gauge>
+  <fuel-gauge n="6">
+   <serviceable type="bool">1</serviceable>
+   <indicated-content-lbs type="double">2246</indicated-content-lbs>
+  </fuel-gauge>
+  <fuel-gauge n="7">
+   <serviceable type="bool">1</serviceable>
+   <indicated-content-lbs type="double">2246</indicated-content-lbs>
+  </fuel-gauge>
+  <engine-rpm-indicator n="0">
+   <serviceable type="bool">1</serviceable>
+  </engine-rpm-indicator>
+  <engine-rpm-indicator n="1">
+   <serviceable type="bool">1</serviceable>
+  </engine-rpm-indicator>
+  <oil-pressure-gauge n="0">
+   <serviceable type="bool">1</serviceable>
+  </oil-pressure-gauge>
+  <oil-pressure-gauge n="1">
+   <serviceable type="bool">1</serviceable>
+  </oil-pressure-gauge>
+  <oil-pressure-gauge n="2">
+   <serviceable type="bool">1</serviceable>
+  </oil-pressure-gauge>
+  <oil-pressure-gauge n="3">
+   <serviceable type="bool">1</serviceable>
+  </oil-pressure-gauge>
+  <boost-gauge n="0">
+   <serviceable type="bool">1</serviceable>
+  </boost-gauge>
+  <boost-gauge n="1">
+   <serviceable type="bool">1</serviceable>
+  </boost-gauge>
+  <boost-gauge n="2">
+   <serviceable type="bool">1</serviceable>
+  </boost-gauge>
+  <boost-gauge n="3">
+   <serviceable type="bool">1</serviceable>
+  </boost-gauge>
+  <cht-gauge n="0">
+   <serviceable type="bool">1</serviceable>
+  </cht-gauge>
+  <cht-gauge n="1">
+   <serviceable type="bool">1</serviceable>
+  </cht-gauge>
+  <cht-gauge n="2">
+   <serviceable type="bool">1</serviceable>
+  </cht-gauge>
+  <cht-gauge n="3">
+   <serviceable type="bool">1</serviceable>
+  </cht-gauge>
+  <oil-temperature-gauge n="0">
+   <serviceable type="bool">1</serviceable>
+  </oil-temperature-gauge>
+  <oil-temperature-gauge n="1">
+   <serviceable type="bool">1</serviceable>
+  </oil-temperature-gauge>
+  <oil-temperature-gauge n="2">
+   <serviceable type="bool">1</serviceable>
+  </oil-temperature-gauge>
+  <oil-temperature-gauge n="3">
+   <serviceable type="bool">1</serviceable>
+  </oil-temperature-gauge>
+  <altimeter n="1">
+   <serviceable type="bool">1</serviceable>
+  </altimeter>
+  <airspeed-indicator n="1">
+   <serviceable type="bool">1</serviceable>
+  </airspeed-indicator>
+  <turn-indicator n="1">
+   <serviceable type="bool">1</serviceable>
+  </turn-indicator>
+  <slip-skid-ball n="1">
+   <serviceable type="bool">1</serviceable>
+  </slip-skid-ball>
+  <magnetic-compass n="1">
+   <serviceable type="bool">1</serviceable>
+  </magnetic-compass>
+  <fore-aft-level>
+   <serviceable type="bool">1</serviceable>
+  </fore-aft-level>
+  <sperry-autopilot n="0" include="Instruments/SperryA-2Gyropilot/Sperry_A-2-instrumentation.xml"/>
+  <flap-position-indicator n="0">
+   <serviceable type="bool">1</serviceable>
+  </flap-position-indicator>
+  <voltmeter>
+   <serviceable type="bool">1</serviceable>
+   <indicated-voltage-V
+       alias="/fdm/jsbsim/electrical/main-switchbox/voltmeter-voltage-V"/>
+  </voltmeter>
+  <ammeter>
+   <serviceable type="bool">1</serviceable>
+   <indicated-current-A
+       alias="/fdm/jsbsim/electrical/main-switchbox/ammeter-current-A"/>
+  </ammeter>
+ </instrumentation>
+
+ <!-- Map FlightGear control properties to JSBSim control properties. -->
+ <controls>
+  <engines>
+   <engine n="0">
+    <!-- throttle n="0" alias="/fdm/jsbsim/fcs/throttle-cmd-norm[0]"/>
+    <mixture  n="0" alias="/fdm/jsbsim/fcs/mixture-cmd-norm[0]"/>
+    <propeller-pitch n="0" alias="/fdm/jsbsim/fcs/advance-cmd-norm[0]"/ -->
+    <starter-cmd  alias="/fdm/jsbsim/fcs/starter-cmd-norm[0]"/>
+    <faults>
+     <fuel-pump-serviceable
+         alias="/fdm/jsbsim/propulsion/engine[0]/fuel-pump-serviceable"/>
+     <starter-serviceable
+         alias="/fdm/jsbsim/propulsion/engine[0]/starter-serviceable"/>
+    </faults>
+   </engine>
+   <engine n="1">
+    <!-- throttle n="0" alias="/fdm/jsbsim/fcs/throttle-cmd-norm[1]"/>
+    <mixture  n="0" alias="/fdm/jsbsim/fcs/mixture-cmd-norm[1]"/>
+    <propeller-pitch n="0" alias="/fdm/jsbsim/fcs/advance-cmd-norm[1]"/ -->
+    <starter-cmd alias="/fdm/jsbsim/fcs/starter-cmd-norm[1]"/>
+    <faults>
+     <fuel-pump-serviceable
+         alias="/fdm/jsbsim/propulsion/engine[1]/fuel-pump-serviceable"/>
+     <starter-serviceable
+         alias="/fdm/jsbsim/propulsion/engine[1]/starter-serviceable"/>
+     <generator-serviceable
+         alias="/fdm/jsbsim/propulsion/engine[1]/generator-serviceable"/>
+    </faults>
+   </engine>
+   <engine n="2">
+    <!-- throttle n="0" alias="/fdm/jsbsim/fcs/throttle-cmd-norm[2]"/>
+    <mixture  n="0" alias="/fdm/jsbsim/fcs/mixture-cmd-norm[2]"/>
+    <propeller-pitch n="0" alias="/fdm/jsbsim/fcs/advance-cmd-norm[2]"/ -->
+    <starter-cmd alias="/fdm/jsbsim/fcs/starter-cmd-norm[2]"/>
+    <faults>
+     <fuel-pump-serviceable
+         alias="/fdm/jsbsim/propulsion/engine[2]/fuel-pump-serviceable"/>
+     <starter-serviceable
+         alias="/fdm/jsbsim/propulsion/engine[2]/starter-serviceable"/>
+     <generator-serviceable
+         alias="/fdm/jsbsim/propulsion/engine[2]/generator-serviceable"/>
+    </faults>
+   </engine>
+   <engine n="3">
+    <!-- throttle n="0" alias="/fdm/jsbsim/fcs/throttle-cmd-norm[3]"/>
+    <mixture  n="0" alias="/fdm/jsbsim/fcs/mixture-cmd-norm[3]"/>
+    <propeller-pitch n="0" alias="/fdm/jsbsim/fcs/advance-cmd-norm[3]"/ -->
+    <starter-cmd alias="/fdm/jsbsim/fcs/starter-cmd-norm[3]"/>
+    <faults>
+     <fuel-pump-serviceable
+         alias="/fdm/jsbsim/propulsion/engine[3]/fuel-pump-serviceable"/>
+     <starter-serviceable
+         alias="/fdm/jsbsim/propulsion/engine[3]/starter-serviceable"/>
+    </faults>
+   </engine>
+   <inner-cutoff alias="/fdm/jsbsim/fcs/inner-engines-cutoff-cmd-norm"/>
+   <outer-cutoff alias="/fdm/jsbsim/fcs/outer-engines-cutoff-cmd-norm"/>
+   <cowling-gills type="float">0.0</cowling-gills>
+   <cowling-gills type="float">0.0</cowling-gills>
+  </engines>
+  <flight>
+   <flap-power alias="/fdm/jsbsim/fcs/flap-power-cmd-norm"/>
+   <flap-motor alias="/fdm/jsbsim/fcs/flap-motor-cmd-norm"/>
+  </flight>
+  <fuel>
+   <!-- Centre wing tanks -->
+   <left-tank-cock n="0"
+       alias="/fdm/jsbsim/fcs/fuel-system/left-tank-cock-cmd-norm"/>
+   <right-tank-cock n="0"
+       alias="/fdm/jsbsim/fcs/fuel-system/right-tank-cock-cmd-norm"/>
+   <!-- Outboard wing tanks -->
+   <left-tank-cock n="1"
+       alias="/fdm/jsbsim/fcs/fuel-system/left-tank-cock-cmd-norm[1]"/>
+   <right-tank-cock n="1"
+       alias="/fdm/jsbsim/fcs/fuel-system/right-tank-cock-cmd-norm[1]"/>
+   <!-- Inboard wing tanks -->
+   <left-tank-cock n="2"
+       alias="/fdm/jsbsim/fcs/fuel-system/left-tank-cock-cmd-norm[2]"/>
+   <right-tank-cock n="2"
+       alias="/fdm/jsbsim/fcs/fuel-system/right-tank-cock-cmd-norm[2]"/>
+   <!-- Fuselage tanks -->
+   <left-tank-cock n="3"
+       alias="/fdm/jsbsim/fcs/fuel-system/left-tank-cock-cmd-norm[3]"/>
+   <right-tank-cock n="3"
+       alias="/fdm/jsbsim/fcs/fuel-system/right-tank-cock-cmd-norm[3]"/>
+
+   <balance-cock alias="/fdm/jsbsim/fcs/fuel-system/balance-cock-cmd-norm"/>
+
+   <!-- Test cocks -->
+   <left-test-cock
+       alias="/fdm/jsbsim/fcs/fuel-system/left-test-cock-cmd-norm"/>
+   <right-test-cock
+       alias="/fdm/jsbsim/fcs/fuel-system/right-test-cock-cmd-norm"/>
+   <center-test-cock
+       alias="/fdm/jsbsim/fcs/fuel-system/center-test-cock-cmd-norm"/>
+  </fuel>
+  <electrical>
+   <voltmeter
+       alias="/fdm/jsbsim/electrical/main-switchbox/switch-cmd-norm[0]"/>
+  </electrical>
+  <lighting>
+   <master n="0"
+       alias="/fdm/jsbsim/electrical/main-switchbox/switch-cmd-norm[1]"/>
+   <master n="1"
+       alias="/fdm/jsbsim/electrical/main-switchbox/switch-cmd-norm[2]"/>
+   <master n="2"
+       alias="/fdm/jsbsim/electrical/main-switchbox/switch-cmd-norm[3]"/>
+   <master n="3"
+       alias="/fdm/jsbsim/electrical/main-switchbox/switch-cmd-norm[4]"/>
+   <nav-lights
+       alias="/fdm/jsbsim/electrical/main-switchbox/switch-cmd-norm[5]"/>
+   <steaming-light
+       alias="/fdm/jsbsim/electrical/light-switch-panel/steaming-cmd-norm"/>
+   <landing-light
+       alias="/fdm/jsbsim/electrical/light-switch-panel/landing-cmd-norm"/>
+   <identification-light
+       alias="/fdm/jsbsim/electrical/light-switch-panel/identification-cmd-norm"/>
+   <anchor-light
+       alias="/fdm/jsbsim/electrical/light-switch-panel/anchor-cmd-norm"/>
+   <!-- Instrument dimmer switches -->
+   <panel-dimmer n="0"
+       alias="/fdm/jsbsim/electrical/instrument-lights/switch-cmd-norm[0]"/>
+   <panel-dimmer n="1"
+       alias="/fdm/jsbsim/electrical/instrument-lights/switch-cmd-norm[1]"/>
+   <panel-dimmer n="2"
+       alias="/fdm/jsbsim/electrical/instrument-lights/switch-cmd-norm[2]"/>
+   <panel-dimmer n="3"
+       alias="/fdm/jsbsim/electrical/instrument-lights/switch-cmd-norm[3]"/>
+   <panel-dimmer n="4"
+       alias="/fdm/jsbsim/electrical/instrument-lights/switch-cmd-norm[4]"/>
+   <panel-dimmer n="5"
+       alias="/fdm/jsbsim/electrical/instrument-lights/switch-cmd-norm[5]"/>
+   <panel-dimmer n="6"
+       alias="/fdm/jsbsim/electrical/instrument-lights/switch-cmd-norm[6]"/>
+   <panel-dimmer n="7"
+       alias="/fdm/jsbsim/electrical/instrument-lights/switch-cmd-norm[7]"/>
+   <panel-dimmer n="8"
+       alias="/fdm/jsbsim/electrical/instrument-lights/switch-cmd-norm[8]"/>
+   <!-- Flight deck ceiling lights -->
+   <!--  Dimmers on the light switch panel -->
+   <dome-norm n="0"
+       alias="/fdm/jsbsim/electrical/light-switch-panel/roof-cmd-norm[0]"/>
+   <dome-norm n="1"
+       alias="/fdm/jsbsim/electrical/light-switch-panel/roof-cmd-norm[1]"/>
+   <!--  Switch on the chart table -->
+   <dome-norm n="2"
+       alias="/fdm/jsbsim/electrical/control-panel/chart-cmd-norm[0]"/>
+   <!--  Switches on the main switchboard -->
+   <dome-norm n="3"
+       alias="/fdm/jsbsim/electrical/control-panel/loading-cmd-norm[0]"/>
+   <dome-norm n="4"
+       alias="/fdm/jsbsim/electrical/control-panel/receiving-cmd-norm[0]"/>
+   <dome-norm n="5"
+       alias="/fdm/jsbsim/electrical/control-panel/mail-cmd-norm[0]"/>
+   <dome-norm n="6"
+       alias="/fdm/jsbsim/electrical/control-panel/mail-cmd-norm[1]"/>
+   <dome-norm n="7"
+       alias="/fdm/jsbsim/electrical/control-panel/stowage-cmd-norm[0]"/>
+  </lighting>
+ </controls>
+
+ <payload include="Systems/payload.xml"/>
+ <consumables include="Systems/consumables.xml"/>
+
+ <limits>
+  <vne type="double">209.0</vne>
+  <mass-and-balance>
+   <maximum-takeoff-mass-lbs type="double">40500</maximum-takeoff-mass-lbs>
+   <maximum-landing-mass-lbs type="double">40500</maximum-landing-mass-lbs>
+  </mass-and-balance>
+
+  <max-flap-extension-speed>
+   <flaps>0.25</flaps>
+   <speed>150.0</speed>
+  </max-flap-extension-speed>
+  <max-flap-extension-speed>
+   <flaps>1.000</flaps>
+   <speed>102.0</speed>
+  </max-flap-extension-speed>
+
+  <!-- Utility Category limits -1.76 - +4.4 G.
+       The actual design load limit for the S.23 is unknown.
+       It is reported that +6 G bumps occured occasionally in
+       extreme monsoon conditions.
+  -->
+  <max-positive-g>4.4</max-positive-g>
+  <max-negative-g>-1.76</max-negative-g>
+ </limits>
+
+ <nasal>
+  <ShortEmpire>
+   <file>Aircraft/Short_Empire/Systems/short-empire.nas</file>
+   <file>Aircraft/Short_Empire/Systems/mooring.nas</file>
+  </ShortEmpire>
+  <limits>
+   <file>Aircraft/Generic/limits.nas</file>
+  </limits>
+  <!-- Walk View -->
+  <walkview>
+   <file>Aircraft/Generic/WalkView/walkview.nas</file>
+  </walkview>
+  <WalkViews>
+   <file>Aircraft/Short_Empire/Systems/walk-views.nas</file>
+  </WalkViews>
+  <RAFmk9sextant>
+   <file>Aircraft/Instruments-3d/RAF_Mk9_bubble_sextant/RAF_Mk9_bubble_sextant.nas</file>
+   <script>
+    var VIEW_NAME = "Copilot View";
+    var STOWED = { position    : {x: -0.2, y: 0.4, z: -0.5},
+                   orientation : {heading : 0.0,
+                                  pitch   : -45.0,
+                                  roll    : 0.0}
+                 };
+   </script>
+  </RAFmk9sextant>
+  <!-- Dual control. -->
+  <dual_control_tools>
+   <file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>
+  </dual_control_tools>
+ </nasal>
+
+ <input>
+  <keyboard include="Systems/keys.xml"/>
+  <!-- Install the sextant controls in mouse mode 0. -->
+  <mice n="0">
+   <mouse n="0">
+    <mode n="0">
+     <x-axis-shift>
+      <binding>
+       <command>nasal</command>
+       <script>
+         RAFmk9sextant.mouseXmove();
+       </script>
+      </binding>
+     </x-axis-shift>
+     <x-axis-ctrl-shift>
+      <binding>
+       <command>nasal</command>
+       <script>
+         RAFmk9sextant.mouseXtilt();
+       </script>
+      </binding>
+     </x-axis-ctrl-shift>
+     <y-axis-shift>
+      <binding>
+       <command>nasal</command>
+       <script>
+         RAFmk9sextant.mouseYmove();
+       </script>
+      </binding>
+     </y-axis-shift>
+     <y-axis-ctrl-shift>
+      <binding>
+       <command>nasal</command>
+       <script>
+         RAFmk9sextant.mouseYaltitude();
+       </script>
+      </binding>
+     </y-axis-ctrl-shift>
+    </mode>
+   </mouse>
+  </mice>
+ </input>
+
+ <!-- 
+   Force the type and initial value of the aliased JSBSim control properties.
+   JSBSim does not write default values to properties that it finds already
+   exist even though they are of undefined type, as e.g. when created by
+   aliases. Setting the default values here allow them to be overriden from
+   the command line.
+
+   Currently the aircraft starts with most of the electrical system switched on.
+ -->
+ <fdm>
+  <jsbsim>
+   <fcs>
+    <flap-power-cmd-norm type="double">1.0</flap-power-cmd-norm>
+    <flap-motor-cmd-norm type="double">0.0</flap-motor-cmd-norm>
+    <starter-cmd-norm n="0" type="double">0.0</starter-cmd-norm>
+    <starter-cmd-norm n="1" type="double">0.0</starter-cmd-norm>
+    <starter-cmd-norm n="2" type="double">0.0</starter-cmd-norm>
+    <starter-cmd-norm n="3" type="double">0.0</starter-cmd-norm>
+    <fuel-system>
+     <mark type="double">1.0</mark>
+     <left-tank-cock-cmd-norm  n="0" type="double">1.0</left-tank-cock-cmd-norm>
+     <left-tank-cock-cmd-norm  n="1" type="double">1.0</left-tank-cock-cmd-norm>
+     <left-tank-cock-cmd-norm  n="2" type="double">1.0</left-tank-cock-cmd-norm>
+     <left-tank-cock-cmd-norm  n="3" type="double">1.0</left-tank-cock-cmd-norm>
+     <right-tank-cock-cmd-norm n="0" type="double">1.0</right-tank-cock-cmd-norm>
+     <right-tank-cock-cmd-norm n="1" type="double">1.0</right-tank-cock-cmd-norm>
+     <right-tank-cock-cmd-norm n="2" type="double">1.0</right-tank-cock-cmd-norm>
+     <right-tank-cock-cmd-norm n="3" type="double">1.0</right-tank-cock-cmd-norm>
+     <balance-cock-cmd-norm type="double">1.0</balance-cock-cmd-norm>
+     <left-test-cock-cmd-norm   type="double">1.0</left-test-cock-cmd-norm>
+     <right-test-cock-cmd-norm  type="double">1.0</right-test-cock-cmd-norm>
+     <center-test-cock-cmd-norm type="double">1.0</center-test-cock-cmd-norm>
+     <inner-engines-cutoff-cmd-norm type="double">1.0</inner-engines-cutoff-cmd-norm>
+     <outer-engines-cutoff-cmd-norm type="double">1.0</outer-engines-cutoff-cmd-norm>
+    </fuel-system>
+   </fcs>
+   <propulsion>
+    <engine n="0">
+     <starter-serviceable type="double">1.0</starter-serviceable>
+     <fuel-pump-serviceable type="double">1.0</fuel-pump-serviceable>
+    </engine>
+    <engine n="1">
+     <starter-serviceable type="double">1.0</starter-serviceable>
+     <fuel-pump-serviceable type="double">1.0</fuel-pump-serviceable>
+    </engine>
+    <engine n="2">
+     <starter-serviceable type="double">1.0</starter-serviceable>
+     <fuel-pump-serviceable type="double">1.0</fuel-pump-serviceable>
+     <generator-serviceable type="double">1.0</generator-serviceable>
+    </engine>
+    <engine n="3">
+     <starter-serviceable type="double">1.0</starter-serviceable>
+     <fuel-pump-serviceable type="double">1.0</fuel-pump-serviceable>
+     <generator-serviceable type="double">1.0</generator-serviceable>
+    </engine>
+   </propulsion>
+   <sperry-autopilot>
+    <enabled-cmd-norm      type="double">0.0</enabled-cmd-norm>
+    <heading-reference-deg type="double">0.0</heading-reference-deg>
+    <pitch-reference-deg   type="double">0.0</pitch-reference-deg>
+    <roll-reference-deg    type="double">0.0</roll-reference-deg>
+    <heading-speed-valve-cmd-norm type="double">0.15</heading-speed-valve-cmd-norm>
+    <pitch-speed-valve-cmd-norm   type="double">0.07</pitch-speed-valve-cmd-norm>
+    <roll-speed-valve-cmd-norm    type="double">0.15</roll-speed-valve-cmd-norm>
+    <sensors>
+     <heading-deg alias="/instrumentation/sperry-autopilot[0]/heading-indicator/indicated-heading-deg"/>
+     <pitch-deg   alias="/instrumentation/sperry-autopilot[0]/attitude-indicator/indicated-pitch-deg"/>
+     <roll-deg    alias="/instrumentation/sperry-autopilot[0]/attitude-indicator/indicated-roll-deg"/>
+    </sensors>
+   </sperry-autopilot>
+   <electrical>
+    <main-switchbox>
+     <switch-cmd-norm n="0" type="double">1.0</switch-cmd-norm>
+     <switch-cmd-norm n="1" type="double">1.0</switch-cmd-norm>
+     <switch-cmd-norm n="2" type="double">1.0</switch-cmd-norm>
+     <switch-cmd-norm n="3" type="double">1.0</switch-cmd-norm>
+     <switch-cmd-norm n="4" type="double">1.0</switch-cmd-norm>
+     <switch-cmd-norm n="5" type="double">1.0</switch-cmd-norm>
+    </main-switchbox>
+    <instrument-lights>
+     <switch-cmd-norm n="0" type="double">0.0</switch-cmd-norm>
+     <switch-cmd-norm n="1" type="double">0.0</switch-cmd-norm>
+     <switch-cmd-norm n="2" type="double">0.0</switch-cmd-norm>
+     <switch-cmd-norm n="3" type="double">0.0</switch-cmd-norm>
+     <switch-cmd-norm n="4" type="double">0.0</switch-cmd-norm>
+     <switch-cmd-norm n="5" type="double">0.0</switch-cmd-norm>
+     <switch-cmd-norm n="6" type="double">0.0</switch-cmd-norm>
+     <switch-cmd-norm n="7" type="double">0.0</switch-cmd-norm>
+     <switch-cmd-norm n="8" type="double">0.0</switch-cmd-norm>
+    </instrument-lights>
+    <light-switch-panel>
+     <steaming-cmd-norm       type="double">0.0</steaming-cmd-norm>
+     <landing-cmd-norm        type="double">0.0</landing-cmd-norm>
+     <identification-cmd-norm type="double">0.0</identification-cmd-norm>
+     <roof-cmd-norm n="0" type="double">0.0</roof-cmd-norm>
+     <roof-cmd-norm n="1" type="double">0.0</roof-cmd-norm>
+    </light-switch-panel>
+    <control-panel>
+     <chart-cmd-norm      type="double">0.0</chart-cmd-norm>
+     <loading-cmd-norm    type="double">0.0</loading-cmd-norm>
+     <receiving-cmd-norm  type="double">0.0</receiving-cmd-norm>
+     <mail-cmd-norm n="0" type="double">0.0</mail-cmd-norm>
+     <mail-cmd-norm n="1" type="double">0.0</mail-cmd-norm>
+     <stowage-cmd-norm    type="double">0.0</stowage-cmd-norm>
+    </control-panel>
+   </electrical>
+   <!-- Configure for 40500 lbs TOW. -->
+   <inertia>
+    <pointmass-weight-lbs n="5" type="double">1800.0</pointmass-weight-lbs>
+    <pointmass-weight-lbs n="6" type="double">1945.0</pointmass-weight-lbs>
+    <pointmass-weight-lbs n="7" type="double">1500.0</pointmass-weight-lbs>
+    <pointmass-weight-lbs n="8" type="double">0.0</pointmass-weight-lbs>
+    <pointmass-weight-lbs n="9" type="double">1300.0</pointmass-weight-lbs>
+   </inertia>
+  </jsbsim>
+ </fdm>
+
+ <autopilot>
+  <settings>
+   <heading-bug-deg alias="/instrumentation/sperry-autopilot[0]/settings/heading-bug-deg"/>
+  </settings>
+ </autopilot>
+
+</PropertyList>

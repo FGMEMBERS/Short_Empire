@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+  Short S.23 Empire flying boat.
+
+  Copyright (C) 2008 - 2011  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license v2 or later.
+-->
+<PropertyList>
+
+ <title>Short S.23 'C'-class Empire flying boat</title>
+ <!-- Specific keys -->
+ <key>
+  <name>b/B</name>
+  <desc>Pick up mooring / Slip mooring.</desc>
+ </key>
+
+ <key>
+  <name>w</name>
+  <desc>In walk views: walk forwards, +shift to run.</desc>
+ </key>
+ <key>
+  <name>s</name>
+  <desc>In walk views: walk backwards.</desc>
+ </key>
+ <key>
+  <name>a</name>
+  <desc>In walk views: side step left, +shift to run.</desc>
+ </key>
+ <key>
+  <name>d</name>
+  <desc>In walk views: side step right, +shift to run.</desc>
+ </key>
+
+ <!-- Handling instructions. -->
+ <text>
+ __________________Engine Start___________________
+ 1. Propeller pitch FINE (N).
+ 2. Mixture rich.
+ 3. Magnetos BOTH.
+ 4. Start one engine at a time.
+
+ ____________________Take Off_____________________
+ 1. Flaps 1/4
+ 2. Propeller pitch FINE (N).
+ 3. Take care to make the take off run straight.
+ 4. Minimum getting off speed 78 mph.
+
+ ____________________Landing______________________
+ 1. Flaps 1/4 - full as required
+ 2. Propeller pitch FINE (N).
+ 3. Approach speed 115 mph.
+
+ <!-- Real data -->
+ ____________________Real data____________________
+ Never exceed speed        : 240 mph (209 kt)
+ Maximum level speed       : 200 mph (174 kt)
+ Cruise speed                   : 165 mph (143 kt)
+ Stall speed (no flaps)       :   73 mph   (63 kt)
+ Approach speed              : 115 mph (100 kt)
+ Minimum getting off speed:   78 mph   (68 kt)
+
+ C.G. Range (aft of hull datum point; Assumed to be 7.73m behind the nose)
+     Maximum Forward      55.5 in (359.75 in)
+     Maximum Aft             66.8 in (371.05 in)
+ 
+ Maximum weight: 40 500 lb (45 000 lb for the long range Mark III 'boats)
+
+ __________________Engine Limits__________________
+         Maximum RPM   Boost.   Cylinder temp.   Oil temp.deg.C.
+ Take off     2475      +4 1/4   235 for 15 min.      90
+ Climbing     2250      +2 1/2   235                     80
+ Cruising     2250      +2         190                     70
+ All out       2600      +2         235                     90
+ Oil pressure maximum 80 lb./sq. in. 5 minutes
+                  minimum 5 lb./sq. in.
+
+ ________________FlightGear Pilot's Notes_______________
+
+ http://wiki.flightgear.org/index.php/Short_Empire
+ </text>
+</PropertyList>

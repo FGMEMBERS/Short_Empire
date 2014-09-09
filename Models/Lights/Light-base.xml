@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+  Short S.23 Empire flying boat for FlightGear.
+
+   Copyright (C) 2011 - 2012  Anders Gidenstam  (anders(at)gidenstam.org)
+   This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <parameters>
+  <!-- All inputs must be provided. -->
+  <rated-power type="double"/>
+  <min-power   type="double"/>
+  <current-power-property type="string"/>
+ </parameters>
+
+
+ <path type="string"/>
+
+ <!-- Rembrandt transparency markup. -->
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>Light</object-name>
+ </effect>
+
+ <animation>
+  <type>noshadow</type>
+  <object-name>Light</object-name>
+ </animation>
+
+ <animation>
+  <type>alpha-test</type>
+  <alpha-factor>0.01</alpha-factor>
+ </animation>
+
+ <animation>
+  <type>billboard</type>
+  <object-name>Light</object-name>
+  <spherical type="bool">true</spherical>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>Light</object-name>
+  <condition>
+   <greater-than-equals>
+    <property alias="../../../../parameters/current-power-property"/>
+    <value alias="../../../../parameters/min-power"/>
+   </greater-than-equals>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>dist-scale</type>
+  <object-name>Light</object-name>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>0.01</dep>
+   </entry>
+   <entry>
+    <ind>300</ind>
+    <dep>0.2</dep>
+   </entry>
+   <entry>
+    <ind>1500</ind>
+    <dep>0.8</dep>
+   </entry>
+   <entry>
+    <ind>6000</ind>
+    <dep>1.2</dep>
+   </entry>
+  </interpolation>
+ </animation>
+
+</PropertyList>

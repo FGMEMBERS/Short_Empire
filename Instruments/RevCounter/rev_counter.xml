@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!--
+  Short S.23 Empire flying boat for FlightGear.
+
+  Copyright (C) 2008 - 2012  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <!-- Overlay these to set the engines. -->
+ <params>
+  <rpm-left>engines/engine[0]/rpm</rpm-left>
+  <rpm-right>engines/engine[1]/rpm</rpm-right>
+  <serviceable>instrumentation/engine-rpm-indicator/serviceable</serviceable>
+
+  <!-- Lighting. 4W bulb. -->
+  <light-power-W type="string"/>
+ </params>
+
+ <path>rev_counter.ac</path>
+
+ <offsets>
+  <!-- x/y/z == back/right/up -->
+  <x-m> 0.000 </x-m>
+  <y-m> 0.000 </y-m>
+  <z-m> 0.000 </z-m>
+ </offsets>
+
+ <!-- Rembrandt transparency markup. -->
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>glass</object-name>
+ </effect>
+
+ <!-- Range according to [Cassidy:2004:FE] 500 - 3 000 rpm.   -->
+ <!-- Range according to "Cockpit J180.tif" 1400 - 2800 rpm.  -->
+ <animation> 
+  <type>rotate</type>
+  <object-name>left_pointer</object-name>
+  <condition>
+   <property alias="../../../params/serviceable"/>
+  </condition>
+  <property alias="../../params/rpm-left"/>
+  <interpolation> 
+   <entry><ind>500</ind><dep>50.0</dep></entry>
+   <entry><ind>3000</ind><dep>-50.0</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>-0.070 </x-m>
+   <y-m> 0.000 </y-m>
+   <z-m> 0.000 </z-m>
+  </center>
+  <axis> 
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation> 
+  <type>rotate</type>
+  <object-name>right_pointer</object-name>
+  <condition>
+   <property alias="../../../params/serviceable"/>
+  </condition>
+  <property alias="../../params/rpm-right"/>
+  <interpolation> 
+   <entry><ind>500</ind><dep>50.0</dep></entry>
+   <entry><ind>3000</ind><dep>-50.0</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>-0.070 </x-m>
+   <y-m> 0.000 </y-m>
+   <z-m> 0.000 </z-m>
+  </center>
+  <axis> 
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+ <animation> 
+  <type>material</type>
+  <object-name>left_scale</object-name>
+  <object-name>right_scale</object-name>
+  <object-name>left_pointer</object-name>
+  <object-name>right_pointer</object-name>
+  <emission> 
+   <factor-prop alias="../../../params/light-power-W"/>
+   <red>0.19</red>
+   <green>0.063</green>
+   <blue>0.063</blue>
+  </emission>
+ </animation>
+
+ <animation>
+  <type>noshadow</type>
+ </animation>
+
+</PropertyList>

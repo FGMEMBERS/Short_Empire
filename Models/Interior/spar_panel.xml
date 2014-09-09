@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<!--
+  Short S.23 Empire flying boat for FlightGear.
+
+  Copyright (C) 2010 - 2012  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <!-- No main model. -->
+ <!-- The origin is at floor level in the middle of spar bulkhead. -->
+ <!-- x/y/z == forward/left/up (backward/right/up when facing the panel) -->
+
+ <!-- Centre wing tank gauges. Available for Mark I, II and III. -->
+ <model>
+  <name>Left centre wing tank gauge</name>
+  <path>Aircraft/Short_Empire/Instruments/TelevelFuelGauge/televel_fuel_gauge.xml</path>
+  <offsets>
+   <x-m> 0.100</x-m>
+   <y-m>-0.260</y-m>
+   <z-m> 1.650</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <tank-content-lbs>consumables/fuel/tank[0]/level-lbs</tank-content-lbs>
+    <indicated-content-lbs>instrumentation/fuel-gauge[0]/indicated-content-lbs</indicated-content-lbs>
+    <serviceable>instrumentation/fuel-gauge[0]/serviceable</serviceable>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+ <model>
+  <name>Right centre wing tank gauge</name>
+  <path>Aircraft/Short_Empire/Instruments/TelevelFuelGauge/televel_fuel_gauge.xml</path>
+  <offsets>
+   <x-m> 0.100</x-m>
+   <y-m>-0.460</y-m>
+   <z-m> 1.650</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <tank-content-lbs>consumables/fuel/tank[1]/level-lbs</tank-content-lbs>
+    <indicated-content-lbs>instrumentation/fuel-gauge[1]/indicated-content-lbs</indicated-content-lbs>
+    <serviceable>instrumentation/fuel-gauge[1]/serviceable</serviceable>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <!-- Outboard wing tank gauges. Available for Mark II and III. -->
+ <model>
+  <name>Left outboard wing tank gauge</name>
+  <path>Aircraft/Short_Empire/Instruments/TelevelFuelGauge/televel_fuel_gauge.xml</path>
+  <offsets>
+   <x-m> 0.100</x-m>
+   <y-m>-0.150</y-m>
+   <z-m> 1.650</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <tank-content-lbs>consumables/fuel/tank[2]/level-lbs</tank-content-lbs>
+    <indicated-content-lbs>instrumentation/fuel-gauge[2]/indicated-content-lbs</indicated-content-lbs>
+    <serviceable>instrumentation/fuel-gauge[2]/serviceable</serviceable>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+ <model>
+  <name>Right outboard wing tank gauge</name>
+  <path>Aircraft/Short_Empire/Instruments/TelevelFuelGauge/televel_fuel_gauge.xml</path>
+  <offsets>
+   <x-m> 0.100</x-m>
+   <y-m>-0.570</y-m>
+   <z-m> 1.650</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <tank-content-lbs>consumables/fuel/tank[3]/level-lbs</tank-content-lbs>
+    <indicated-content-lbs>instrumentation/fuel-gauge[3]/indicated-content-lbs</indicated-content-lbs>
+    <serviceable>instrumentation/fuel-gauge[3]/serviceable</serviceable>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <!-- Inboard wing tank gauges. Available for Mark III. -->
+ <model>
+  <name>Left inboard wing tank gauge</name>
+  <path>Aircraft/Short_Empire/Instruments/TelevelFuelGauge/televel_fuel_gauge.xml</path>
+  <offsets>
+   <x-m> 0.100</x-m>
+   <y-m>-0.175</y-m>
+   <z-m> 1.650</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <tank-content-lbs>consumables/fuel/tank[4]/level-lbs</tank-content-lbs>
+    <indicated-content-lbs>instrumentation/fuel-gauge[4]/indicated-content-lbs</indicated-content-lbs>
+    <serviceable>instrumentation/fuel-gauge[4]/serviceable</serviceable>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+ <model>
+  <name>Right inboard wing tank gauge</name>
+  <path>Aircraft/Short_Empire/Instruments/TelevelFuelGauge/televel_fuel_gauge.xml</path>
+  <offsets>
+   <x-m> 0.100</x-m>
+   <y-m>-0.545</y-m>
+   <z-m> 1.650</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <tank-content-lbs>consumables/fuel/tank[5]/level-lbs</tank-content-lbs>
+    <indicated-content-lbs>instrumentation/fuel-gauge[5]/indicated-content-lbs</indicated-content-lbs>
+    <serviceable>instrumentation/fuel-gauge[5]/serviceable</serviceable>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <!-- Fuselage tank gauges. Available for Mark III. -->
+ <model>
+  <name>Left fuselage tank gauge</name>
+  <path>Aircraft/Short_Empire/Instruments/TelevelFuelGauge/televel_fuel_gauge.xml</path>
+  <offsets>
+   <x-m> 0.100</x-m>
+   <y-m>-0.285</y-m>
+   <z-m> 1.650</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <tank-content-lbs>consumables/fuel/tank[6]/level-lbs</tank-content-lbs>
+    <indicated-content-lbs>instrumentation/fuel-gauge[6]/indicated-content-lbs</indicated-content-lbs>
+    <serviceable>instrumentation/fuel-gauge[6]/serviceable</serviceable>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+ <model>
+  <name>Right fuselage tank gauge</name>
+  <path>Aircraft/Short_Empire/Instruments/TelevelFuelGauge/televel_fuel_gauge.xml</path>
+  <offsets>
+   <x-m> 0.100</x-m>
+   <y-m>-0.435</y-m>
+   <z-m> 1.650</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <tank-content-lbs>consumables/fuel/tank[7]/level-lbs</tank-content-lbs>
+    <indicated-content-lbs>instrumentation/fuel-gauge[7]/indicated-content-lbs</indicated-content-lbs>
+    <serviceable>instrumentation/fuel-gauge[7]/serviceable</serviceable>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+
+ <animation>
+  <type>select</type>
+  <object-name>Left outboard wing tank gauge</object-name>
+  <object-name>Right outboard wing tank gauge</object-name>
+  <condition>
+   <greater-than>
+    <property>sim/model/mark</property>
+    <value type="int">1</value>
+   </greater-than>     
+  </condition>
+ </animation>
+
+ <animation>
+  <type>translate</type>
+  <object-name>Left outboard wing tank gauge</object-name>
+  <object-name>Left centre wing tank gauge</object-name>
+  <property>sim/model/mark</property>
+  <interpolation>
+   <entry>
+    <ind>1</ind>
+    <dep>0.0</dep>
+   </entry>
+   <entry>
+    <ind>2</ind>
+    <dep>0.0</dep>
+   </entry>
+   <entry>
+    <ind>3</ind>
+    <dep>0.195</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>translate</type>
+  <object-name>Right outboard wing tank gauge</object-name>
+  <object-name>Right centre wing tank gauge</object-name>
+  <property>sim/model/mark</property>
+  <interpolation>
+   <entry>
+    <ind>1</ind>
+    <dep>0.0</dep>
+   </entry>
+   <entry>
+    <ind>2</ind>
+    <dep>0.0</dep>
+   </entry>
+   <entry>
+    <ind>3</ind>
+    <dep>-0.195</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>Left inboard wing tank gauge</object-name>
+  <object-name>Right inboard wing tank gauge</object-name>
+  <object-name>Left fuselage tank gauge</object-name>
+  <object-name>Right fuselage tank gauge</object-name>
+  <condition>
+   <greater-than>
+    <property>sim/model/mark</property>
+    <value type="int">2</value>
+   </greater-than>     
+  </condition>
+ </animation>
+
+ <!-- Port and starboard carburettor air intake controls. -->
+ <model>
+  <name>Port and starboard carburettor air intake controls</name>
+  <path>Aircraft/Short_Empire/Models/Interior/carburettor_air.xml</path>
+  <offsets>
+   <x-m> 0.000</x-m>
+   <y-m>-0.360</y-m>
+   <z-m> 1.360</z-m>
+  </offsets>
+  <overlay>
+   <parameters>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </parameters>
+  </overlay>
+ </model>
+
+ <!-- Port and starboard fuel pump test cocks. -->
+ <model>
+  <name>Port and starboard fuel pump test cocks controls</name>
+  <path>Aircraft/Short_Empire/Models/Interior/fuel_pump_test_cocks.xml</path>
+  <offsets>
+   <x-m> 0.000</x-m>
+   <y-m>-0.360</y-m>
+   <z-m> 1.120</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <!-- Central fuel pump test cock. -->
+ <model>
+  <name>Central fuel pump test cocks control</name>
+  <path>Aircraft/Short_Empire/Models/Interior/fuel_pump_test_cock.xml</path>
+  <offsets>
+   <heading-deg>90.0</heading-deg>
+   <x-m> 0.150</x-m>
+   <y-m>-1.500</y-m>
+   <z-m> 1.300</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <!-- Port cowling gills control. -->
+ <model>
+  <name>Port cowling gills control</name>
+  <path>Aircraft/Short_Empire/Models/Interior/cowling_gills.xml</path>
+  <offsets>
+   <heading-deg>-90.0</heading-deg>
+   <pitch-deg>15.0</pitch-deg>
+   <x-m> 0.450</x-m>
+   <y-m> 1.450</y-m>
+   <z-m> 1.500</z-m>
+  </offsets>
+  <overlay>
+   <parameters>
+    <pos-norm type="string">controls/engines/cowling-gills[0]</pos-norm>
+    <inc-action-script type="string">
+      var v = math.min(getprop("/controls/engines/cowling-gills[0]") +
+                       0.002,
+                       1.0);
+      setprop("/controls/engines/cowling-gills[0]", v);
+      setprop("/controls/engines/engine[0]/cowl-flaps-norm", v);
+      setprop("/controls/engines/engine[1]/cowl-flaps-norm", v);
+    </inc-action-script>
+    <dec-action-script type="string">
+      var v = math.max(getprop("/controls/engines/cowling-gills[0]") -
+                       0.002,
+                       0.0);
+      setprop("/controls/engines/cowling-gills[0]", v);
+      setprop("/controls/engines/engine[0]/cowl-flaps-norm", v);
+      setprop("/controls/engines/engine[1]/cowl-flaps-norm", v);
+    </dec-action-script>
+    <lighting-norm>systems/electrical/lamps/flight-deck/mail-power-norm[1]</lighting-norm>
+   </parameters>
+  </overlay>
+ </model>
+
+ <!-- Starboard cowling gills control. -->
+ <model>
+  <name>Starboard cowling gills control</name>
+  <path>Aircraft/Short_Empire/Models/Interior/cowling_gills.xml</path>
+  <offsets>
+   <heading-deg>90.0</heading-deg>
+   <pitch-deg>15.0</pitch-deg>
+   <x-m> 0.450</x-m>
+   <y-m>-1.450</y-m>
+   <z-m> 1.500</z-m>
+  </offsets>
+  <overlay>
+   <parameters>
+    <pos-norm type="string">controls/engines/cowling-gills[1]</pos-norm>
+    <inc-action-script type="string">
+      var v = math.min(getprop("/controls/engines/cowling-gills[1]") +
+                       0.002,
+                       1.0);
+      setprop("/controls/engines/cowling-gills[1]", v);
+      setprop("/controls/engines/engine[2]/cowl-flaps-norm", v);
+      setprop("/controls/engines/engine[3]/cowl-flaps-norm", v);
+    </inc-action-script>
+    <dec-action-script type="string">
+      var v = math.max(getprop("/controls/engines/cowling-gills[1]") -
+                       0.002,
+                       0.0);
+      setprop("/controls/engines/cowling-gills[1]", v);
+      setprop("/controls/engines/engine[2]/cowl-flaps-norm", v);
+      setprop("/controls/engines/engine[3]/cowl-flaps-norm", v);
+    </dec-action-script>
+    <lighting-norm>systems/electrical/lamps/flight-deck/receiving-power-norm[0]</lighting-norm>
+   </parameters>
+  </overlay>
+ </model>
+
+ <animation> 
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>10</max-m>
+ </animation>
+
+</PropertyList>

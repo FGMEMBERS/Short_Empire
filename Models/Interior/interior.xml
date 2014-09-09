@@ -1,0 +1,1168 @@
+<?xml version="1.0"?>
+<!--
+  Short S.23 Empire flying boat for FlightGear.
+
+  Copyright (C) 2008 - 2013  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <path>interior.ac</path>
+ <offsets>
+  <!-- x/y/z == forward/left/up -->
+  <x-m> 0.0 </x-m>
+  <y-m> 0.0 </y-m>
+  <z-m> 0.0 </z-m>
+ </offsets>
+
+ <!-- Instrument panel =====================================================-->
+ <model>
+  <name>Panel instruments</name>
+  <path>Aircraft/Short_Empire/Models/Interior/instrument_panel.xml</path>
+  <offsets>
+   <heading-deg>180</heading-deg>
+   <!-- x/y/z == forward/left/up -->
+   <x-m>-1.6500 </x-m>
+   <y-m>  0.000 </y-m>
+   <z-m>  1.348 </z-m>
+   <pitch-deg>0.0</pitch-deg>
+  </offsets>
+ </model>
+
+ <!-- Port cockpit side ====================================================-->
+
+ <model>
+  <name>Sperry speed valves</name>
+  <path>Aircraft/Short_Empire/Instruments/SperryA-2Gyropilot/Speed_valves.xml</path>
+  <offsets>
+   <!-- x/y/z == forward/left/up -->
+   <x-m> -2.100 </x-m>
+   <y-m>  0.800 </y-m>
+   <z-m>  1.420 </z-m>
+   <heading-deg>-105.0</heading-deg>
+   <pitch-deg>0.0</pitch-deg>
+  </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Dimmer switch panel</name>
+  <path>Aircraft/Short_Empire/Models/Interior/dimmer_switch_panel.xml</path>
+  <offsets>
+   <!-- x/y/z == forward/left/up -->
+   <x-m> -2.050 </x-m>
+   <y-m>  0.880 </y-m>
+   <z-m>  1.200 </z-m>
+   <heading-deg>-108.0</heading-deg>
+   <pitch-deg>0.0</pitch-deg>
+  </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Light switch panel</name>
+  <path>Aircraft/Short_Empire/Models/Interior/light_switch_panel.xml</path>
+  <offsets>
+   <!-- x/y/z == forward/left/up -->
+   <x-m> -2.300 </x-m>
+   <y-m>  0.920 </y-m>
+   <z-m>  1.190 </z-m>
+   <heading-deg>-100.0</heading-deg>
+   <pitch-deg>0.0</pitch-deg>
+  </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Heater switch panel</name>
+  <path>Aircraft/Short_Empire/Models/Interior/heater_switch_panel.xml</path>
+  <offsets>
+   <!-- x/y/z == forward/left/up -->
+   <x-m> -2.430 </x-m>
+   <y-m>  0.960 </y-m>
+   <z-m>  1.420 </z-m>
+   <heading-deg>-100.0</heading-deg>
+   <pitch-deg>0.0</pitch-deg>
+  </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <!-- Captain's compass -->
+ <model>
+  <name>Captain's compass</name>
+  <path>Aircraft/Short_Empire/Instruments/CompassP11/compass-p11.xml</path>
+  <offsets>
+   <heading-deg>180</heading-deg>
+   <!-- x/y/z == forward/left/up -->
+   <x-m> -1.750 </x-m>
+   <y-m>  0.740 </y-m>
+   <z-m>  1.400 </z-m>
+   <pitch-deg>0.0</pitch-deg>
+  </offsets>
+  <overlay>
+   <params>
+    <heading-bug-deg>instrumentation/magnetic-compass[0]/heading-bug-deg</heading-bug-deg>
+    <light-power-W>systems/electrical/lamps/instruments/compass-power-W[0]</light-power-W>
+   </params>
+   <animation n="10">
+    <type>rotate</type>
+    <object-name>bracket-support</object-name>
+    <factor>/constants/zero</factor>
+    <offset-deg>71.0</offset-deg>
+    <center>
+     <x-m>0.00</x-m>
+     <y-m>0.00</y-m>
+     <z-m>0.00</z-m>
+    </center>
+    <axis>
+     <x>0.0</x>
+     <y>0.0</y>
+     <z>1.0</z>
+    </axis>    
+   </animation>
+  </overlay>
+ </model> 
+
+ <!-- Starboard cockpit side ===============================================-->
+
+ <!-- First Officer's compass -->
+ <model>
+  <name>First Officer's compass</name>
+  <path>Aircraft/Short_Empire/Instruments/CompassP11/compass-p11.xml</path>
+  <offsets>
+   <heading-deg>180</heading-deg>
+   <!-- x/y/z == forward/left/up -->
+   <x-m> -1.750 </x-m>
+   <y-m> -0.740 </y-m>
+   <z-m>  1.400 </z-m>
+   <pitch-deg>0.0</pitch-deg>
+  </offsets>
+  <overlay>
+   <params>
+    <indicated-heading-deg>instrumentation/magnetic-compass[1]/indicated-heading-deg</indicated-heading-deg>
+    <heading-bug-deg>instrumentation/magnetic-compass[1]/heading-bug-deg</heading-bug-deg>
+    <serviceable>instrumentation/magnetic-compass[1]/serviceable</serviceable>
+    <light-power-W>systems/electrical/lamps/instruments/compass-power-W[1]</light-power-W>
+   </params>
+   <animation n="10">
+    <type>rotate</type>
+    <object-name>bracket-support</object-name>
+    <factor>/constants/zero</factor>
+    <offset-deg>-71.0</offset-deg>
+    <center>
+     <x-m>0.00</x-m>
+     <y-m>0.00</y-m>
+     <z-m>0.00</z-m>
+    </center>
+    <axis>
+     <x>0.0</x>
+     <y>0.0</y>
+     <z>1.0</z>
+    </axis>    
+   </animation>
+  </overlay>
+ </model> 
+
+ <!-- Coupe panel ==========================================================-->
+ <model>
+  <name>Coupe panel</name>
+  <path>Aircraft/Short_Empire/Models/Interior/flap_panel.xml</path>
+  <offsets>
+   <!-- x/y/z == forward/left/up -->
+   <x-m> -1.900 </x-m>
+   <y-m>  0.000 </y-m>
+   <z-m>  2.270 </z-m>
+   <heading-deg>180.0</heading-deg>
+   <pitch-deg>20.0</pitch-deg>
+  </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <!-- Star observer's instruments ==========================================-->
+ <model>
+  <name>Bubble_sextant</name>
+  <path>Aircraft/Instruments-3d/RAF_Mk9_bubble_sextant/RAF_Mk9_bubble_sextant.xml</path>
+  <offsets>
+   <heading-deg>180</heading-deg>
+   <x-m> -2.50 </x-m>
+   <y-m> -0.50 </y-m>
+   <z-m>  2.00 </z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <!-- Engine instrument panel ==============================================-->
+ <model>
+  <name>Engine instrument panel</name>
+  <path>Aircraft/Short_Empire/Models/Interior/engine_panel.xml</path>
+  <offsets>
+   <!-- x/y/z == forward/left/up -->
+   <x-m> -3.100 </x-m>
+   <y-m> -1.080 </y-m>
+   <z-m>  1.100 </z-m>
+   <heading-deg>99.0</heading-deg>
+   <pitch-deg>2.0</pitch-deg>
+  </offsets>
+ </model>
+
+ <!-- Main electrical switchboard ==========================================-->
+ <model>
+  <name>Main electrical switchboard</name>
+  <path>Aircraft/Short_Empire/Models/Interior/main_switchboard.xml</path>
+  <offsets>
+   <!-- x/y/z == forward/left/up -->
+   <x-m> -7.400 </x-m>
+   <y-m> -1.350 </y-m>
+   <z-m>  1.900 </z-m>
+   <heading-deg>95.0</heading-deg>
+   <pitch-deg>0.0</pitch-deg>
+  </offsets>
+ </model>
+
+ <!-- Spar panel ===========================================================-->
+ <model>
+  <name>Instruments at the spar bulkhead</name>
+  <path>Aircraft/Short_Empire/Models/Interior/spar_panel.xml</path>
+  <offsets>
+   <!-- x/y/z == forward/left/up -->
+   <x-m> -8.200 </x-m>
+   <y-m>  0.000 </y-m>
+   <z-m>  1.100 </z-m>
+   <pitch-deg>0.0</pitch-deg>
+  </offsets>
+ </model>
+
+ <!-- Cockpit animations ===================================================-->
+
+ <!-- Animations for the control columns. -->
+ <animation>
+  <type>rotate</type>
+  <object-name>control_column_L</object-name>
+  <object-name>yoke_L</object-name>
+  <object-name>control_column_R</object-name>
+  <object-name>yoke_R</object-name>
+  <property>surface-positions/elevator-pos-norm</property>
+  <factor>15.67</factor>
+  <offset-deg>0.0</offset-deg>
+  <center>
+   <x-m> -2.00 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  0.80 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>yoke_L</object-name>
+  <property>surface-positions/right-aileron-pos-norm</property>
+  <factor>87.0</factor>
+  <offset-deg>0.0</offset-deg>
+  <center>
+   <x-m> -2.00 </x-m>
+   <y-m>  0.45 </y-m>
+   <z-m>  1.60 </z-m>
+  </center>
+  <axis>
+   <x> 1.0 </x>
+   <y> 0.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>yoke_R</object-name>
+  <property>surface-positions/right-aileron-pos-norm</property>
+  <factor>87.0</factor>
+  <offset-deg>0.0</offset-deg>
+  <center>
+   <x-m> -2.00 </x-m>
+   <y-m> -0.45 </y-m>
+   <z-m>  1.60 </z-m>
+  </center>
+  <axis>
+   <x> 1.0 </x>
+   <y> 0.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+
+ <!-- Throttle box =========================================================-->
+
+ <!-- Animations for the throttle levers. -->
+ <animation>
+  <type>knob</type>
+  <object-name>throttle_handle.1</object-name>
+  <object-name>throttle_arm.1</object-name>
+  <property>controls/engines/engine[0]/throttle</property>
+  <factor>60.0</factor>
+  <offset-deg>-50.0</offset-deg>
+  <center>
+   <x-m> -1.78 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  1.41 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[0]/throttle</property>
+    <factor type="double">0.02</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+ <animation>
+  <type>knob</type>
+  <object-name>throttle_handle.2</object-name>
+  <object-name>throttle_arm.2</object-name>
+  <property>controls/engines/engine[1]/throttle</property>
+  <factor>60.0</factor>
+  <offset-deg>-50.0</offset-deg>
+  <center>
+   <x-m> -1.78 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  1.41 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[1]/throttle</property>
+    <factor type="double">0.02</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+ <animation>
+  <type>knob</type>
+  <object-name>throttle_handle.3</object-name>
+  <object-name>throttle_arm.3</object-name>
+  <property>controls/engines/engine[2]/throttle</property>
+  <factor>60.0</factor>
+  <offset-deg>-50.0</offset-deg>
+  <center>
+   <x-m> -1.78 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  1.41 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[2]/throttle</property>
+    <factor type="double">0.02</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+ <animation>
+  <type>knob</type>
+  <object-name>throttle_handle.4</object-name>
+  <object-name>throttle_arm.4</object-name>
+  <property>controls/engines/engine[3]/throttle</property>
+  <factor>60.0</factor>
+  <offset-deg>-50.0</offset-deg>
+  <center>
+   <x-m> -1.78 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  1.41 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[3]/throttle</property>
+    <factor type="double">0.02</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+
+ <!-- Animations for the mixture levers. -->
+ <animation>
+  <type>knob</type>
+  <object-name>mixture_handle.1</object-name>
+  <object-name>mixture_arm.1</object-name>
+  <property>controls/engines/engine[0]/mixture</property>
+  <factor>-70.0</factor>
+  <offset-deg>-5.0</offset-deg>
+  <center>
+   <x-m> -1.98 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  1.34 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[0]/mixture</property>
+    <factor type="double">-0.02</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+ <animation>
+  <type>knob</type>
+  <object-name>mixture_handle.2</object-name>
+  <object-name>mixture_arm.2</object-name>
+  <property>controls/engines/engine[1]/mixture</property>
+  <factor>-70.0</factor>
+  <offset-deg>-5.0</offset-deg>
+  <center>
+   <x-m> -1.98 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  1.34 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[1]/mixture</property>
+    <factor type="double">-0.02</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+ <animation>
+  <type>knob</type>
+  <object-name>mixture_handle.3</object-name>
+  <object-name>mixture_arm.3</object-name>
+  <property>controls/engines/engine[2]/mixture</property>
+  <factor>-70.0</factor>
+  <offset-deg>-5.0</offset-deg>
+  <center>
+   <x-m> -1.98 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  1.34 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[2]/mixture</property>
+    <factor type="double">-0.02</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+ <animation>
+  <type>knob</type>
+  <object-name>mixture_handle.4</object-name>
+  <object-name>mixture_arm.4</object-name>
+  <property>controls/engines/engine[3]/mixture</property>
+  <factor>-70.0</factor>
+  <offset-deg>-5.0</offset-deg>
+  <center>
+   <x-m> -1.98 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  1.34 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[3]/mixture</property>
+    <factor type="double">-0.02</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+
+ <!-- Animations for the propeller pitch levers. -->
+ <animation>
+  <type>knob</type>
+  <object-name>propeller_handle.1</object-name>
+  <object-name>propeller_arm.1</object-name>
+  <property>controls/engines/engine[0]/propeller-pitch</property>
+  <factor>-30.0</factor>
+  <offset-deg>30.0</offset-deg>
+  <center>
+   <x-m> -1.94 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  0.96 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[0]/propeller-pitch</property>
+    <factor type="double">-1.0</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+ <animation>
+  <type>knob</type>
+  <object-name>propeller_handle.2</object-name>
+  <object-name>propeller_arm.2</object-name>
+  <property>controls/engines/engine[1]/propeller-pitch</property>
+  <factor>-30.0</factor>
+  <offset-deg>30.0</offset-deg>
+  <center>
+   <x-m> -1.94 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  0.96 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[1]/propeller-pitch</property>
+    <factor type="double">-1.0</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+ <animation>
+  <type>knob</type>
+  <object-name>propeller_handle.3</object-name>
+  <object-name>propeller_arm.3</object-name>
+  <property>controls/engines/engine[2]/propeller-pitch</property>
+  <factor>-30.0</factor>
+  <offset-deg>30.0</offset-deg>
+  <center>
+   <x-m> -1.94 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  0.96 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[2]/propeller-pitch</property>
+    <factor type="double">-1.0</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+ <animation>
+  <type>knob</type>
+  <object-name>propeller_handle.4</object-name>
+  <object-name>propeller_arm.4</object-name>
+  <property>controls/engines/engine[3]/propeller-pitch</property>
+  <factor>-30.0</factor>
+  <offset-deg>30.0</offset-deg>
+  <center>
+   <x-m> -1.94 </x-m>
+   <y-m>  0.00 </y-m>
+   <z-m>  0.96 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>true</repeatable>
+   <interval-sec>0.2</interval-sec>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/engine[3]/propeller-pitch</property>
+    <factor type="double">-1.0</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+
+ <!-- Animations for the cut-off levers. -->
+ <animation> 
+  <type>knob</type>
+  <object-name>cutoff_lever_L</object-name>
+  <property>controls/engines/inner-cutoff</property>
+  <factor>90.0</factor>
+  <offset-deg>-90.0</offset-deg>
+  <center>
+   <x-m> -1.70 </x-m>
+   <y-m>  1.14 </y-m>
+   <z-m>  1.35 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/inner-cutoff</property>
+    <factor type="double">1.0</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+ <animation> 
+  <type>knob</type>
+  <object-name>cutoff_lever_R</object-name>
+  <property>controls/engines/outer-cutoff</property>
+  <factor>90.0</factor>
+  <offset-deg>-90.0</offset-deg>
+  <center>
+   <x-m> -1.70 </x-m>
+   <y-m> -1.14 </y-m>
+   <z-m>  1.35 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+  <action>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-adjust</command>
+    <property>controls/engines/outer-cutoff</property>
+    <factor type="double">1.0</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+  <drag-direction>vertical</drag-direction>
+ </animation>
+
+ <!-- Animation for the autopilot lever. -->
+ <animation> 
+  <type>knob</type>
+  <object-name>AP_engage_lever</object-name>
+  <property>instrumentation/sperry-autopilot[0]/settings/engaged-norm</property>
+  <factor>120.0</factor>
+  <offset-deg>-60.0</offset-deg>
+  <axis>
+   <x1-m> -1.988 </x1-m>
+   <y1-m>  0.000 </y1-m>
+   <z1-m>  1.098 </z1-m>
+   <x2-m> -1.970 </x2-m>
+   <y2-m>  0.000 </y2-m>
+   <z2-m>  1.103 </z2-m>
+  </axis>
+  <action>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-adjust</command>
+    <property>instrumentation/sperry-autopilot[0]/settings/engaged-norm</property>
+    <factor type="double">1.0</factor>
+    <min type="double">0.0</min>
+    <max type="double">1.0</max>
+   </binding>
+  </action>
+ </animation>
+
+ <!-- Fuel system cocks ====================================================-->
+
+ <!-- Select animations for fuel system dependent items. -->
+ <animation>
+  <type>select</type>
+  <object-name>fuel_selector_box_mk1</object-name>
+  <condition>
+   <less-than>
+    <property>sim/model/mark</property>
+    <value type="int">2</value>
+   </less-than>     
+  </condition>
+ </animation>
+ <animation>
+  <type>select</type>
+  <object-name>fuel_selector_box_mk2</object-name>
+  <object-name>fuel_lever_knob_PO</object-name>
+  <object-name>fuel_lever_knob_SO</object-name>
+  <object-name>fuel_lever_arm_PO</object-name>
+  <object-name>fuel_lever_arm_SO</object-name>
+  <condition>
+   <greater-than>
+    <property>sim/model/mark</property>
+    <value type="int">1</value>
+   </greater-than>     
+  </condition>
+ </animation>
+ <animation>
+  <type>select</type>
+  <object-name>fuel_lever_knob_B</object-name>
+  <object-name>fuel_lever_arm_B</object-name>
+  <condition>
+   <less-than>
+    <property>sim/model/mark</property>
+    <value type="int">3</value>
+   </less-than>     
+  </condition>
+ </animation>
+ <animation>
+  <type>select</type>
+  <object-name>fuel_selector_box_mk3</object-name>
+  <object-name>fuel_lever_knob_PI</object-name>
+  <object-name>fuel_lever_knob_PF</object-name>
+  <object-name>fuel_lever_knob_SI</object-name>
+  <object-name>fuel_lever_knob_SF</object-name>
+  <object-name>fuel_lever_arm_PI</object-name>
+  <object-name>fuel_lever_arm_PF</object-name>
+  <object-name>fuel_lever_arm_SI</object-name>
+  <object-name>fuel_lever_arm_SF</object-name>
+  <object-name>fuel_lever_knob_B2</object-name>
+  <object-name>fuel_lever_arm_B2</object-name>
+  <condition>
+   <greater-than>
+    <property>sim/model/mark</property>
+    <value type="int">2</value>
+   </greater-than>     
+  </condition>
+ </animation>
+
+ <!-- Animations for the fuel cock levers present in all fuel systems. -->
+ <animation>
+  <type>pick</type>
+  <object-name>fuel_lever_knob_PC</object-name>
+  <object-name>fuel_lever_arm_PC</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-cycle</command>
+    <property>controls/fuel/left-tank-cock</property>
+    <value type="double">0.0</value>
+    <value type="double">1.0</value>
+   </binding>
+  </action>
+ </animation>
+ <animation> 
+  <type>pick</type>
+  <object-name>fuel_lever_knob_B</object-name>
+  <object-name>fuel_lever_arm_B</object-name>
+  <object-name>fuel_lever_knob_B2</object-name>
+  <object-name>fuel_lever_arm_B2</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-cycle</command>
+    <property>controls/fuel/balance-cock</property>
+    <value type="double">0.0</value>
+    <value type="double">1.0</value>
+   </binding>
+  </action>
+ </animation>
+ <animation> 
+  <type>pick</type>
+  <object-name>fuel_lever_knob_SC</object-name>
+  <object-name>fuel_lever_arm_SC</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-cycle</command>
+    <property>controls/fuel/right-tank-cock</property>
+    <value type="double">0.0</value>
+    <value type="double">1.0</value>
+   </binding>
+  </action>
+ </animation>
+
+ <animation> 
+  <type>rotate</type>
+  <object-name>fuel_lever_knob_PC</object-name>
+  <object-name>fuel_lever_arm_PC</object-name>
+  <property>controls/fuel/left-tank-cock</property>
+  <factor>90.0</factor>
+  <offset-deg>0.0</offset-deg>
+  <center>
+   <x-m> -7.90 </x-m>
+   <y-m> -0.90 </y-m>
+   <z-m>  2.89 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>fuel_lever_knob_B</object-name>
+  <object-name>fuel_lever_arm_B</object-name>
+  <property>controls/fuel/balance-cock</property>
+  <factor>90.0</factor>
+  <offset-deg>0.0</offset-deg>
+  <center>
+   <x-m> -7.90 </x-m>
+   <y-m> -0.90 </y-m>
+   <z-m>  2.89 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>fuel_lever_knob_SC</object-name>
+  <object-name>fuel_lever_arm_SC</object-name>
+  <property>controls/fuel/right-tank-cock</property>
+  <factor>90.0</factor>
+  <offset-deg>0.0</offset-deg>
+  <center>
+   <x-m> -7.90 </x-m>
+   <y-m> -0.90 </y-m>
+   <z-m>  2.89 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+
+ <!-- Animations for the fuel cock levers present in the Mark II and III
+      fuel systems.
+ -->
+ <animation> 
+  <type>pick</type>
+  <object-name>fuel_lever_knob_PO</object-name>
+  <object-name>fuel_lever_arm_PO</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-cycle</command>
+    <property>controls/fuel/left-tank-cock[1]</property>
+    <value type="double">0.0</value>
+    <value type="double">1.0</value>
+   </binding>
+  </action>
+ </animation>
+ <animation> 
+  <type>pick</type>
+  <object-name>fuel_lever_knob_SO</object-name>
+  <object-name>fuel_lever_arm_SO</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-cycle</command>
+    <property>controls/fuel/right-tank-cock[1]</property>
+    <value type="double">0.0</value>
+    <value type="double">1.0</value>
+   </binding>
+  </action>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>fuel_lever_knob_PO</object-name>
+  <object-name>fuel_lever_arm_PO</object-name>
+  <property>controls/fuel/left-tank-cock[1]</property>
+  <factor>90.0</factor>
+  <offset-deg>0.0</offset-deg>
+  <center>
+   <x-m> -7.90 </x-m>
+   <y-m> -0.90 </y-m>
+   <z-m>  2.89 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>fuel_lever_knob_SO</object-name>
+  <object-name>fuel_lever_arm_SO</object-name>
+  <property>controls/fuel/right-tank-cock[1]</property>
+  <factor>90.0</factor>
+  <offset-deg>0.0</offset-deg>
+  <center>
+   <x-m> -7.90 </x-m>
+   <y-m> -0.90 </y-m>
+   <z-m>  2.89 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+
+ <!-- Animations for the fuel cock levers present in the Mark III
+      fuel system.
+ -->
+ <animation> 
+  <type>pick</type>
+  <object-name>fuel_lever_knob_PI</object-name>
+  <object-name>fuel_lever_arm_PI</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-cycle</command>
+    <property>controls/fuel/left-tank-cock[2]</property>
+    <value type="double">0.0</value>
+    <value type="double">1.0</value>
+   </binding>
+  </action>
+ </animation>
+ <animation> 
+  <type>pick</type>
+  <object-name>fuel_lever_knob_SI</object-name>
+  <object-name>fuel_lever_arm_SI</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-cycle</command>
+    <property>controls/fuel/right-tank-cock[2]</property>
+    <value type="double">0.0</value>
+    <value type="double">1.0</value>
+   </binding>
+  </action>
+ </animation>
+ <animation> 
+  <type>pick</type>
+  <object-name>fuel_lever_knob_PF</object-name>
+  <object-name>fuel_lever_arm_PF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-cycle</command>
+    <property>controls/fuel/left-tank-cock[3]</property>
+    <value type="double">0.0</value>
+    <value type="double">1.0</value>
+   </binding>
+  </action>
+ </animation>
+ <animation> 
+  <type>pick</type>
+  <object-name>fuel_lever_knob_SF</object-name>
+  <object-name>fuel_lever_arm_SF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>property-cycle</command>
+    <property>controls/fuel/right-tank-cock[3]</property>
+    <value type="double">0.0</value>
+    <value type="double">1.0</value>
+   </binding>
+  </action>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>fuel_lever_knob_SI</object-name>
+  <object-name>fuel_lever_arm_SI</object-name>
+  <property>controls/fuel/right-tank-cock[2]</property>
+  <factor>90.0</factor>
+  <offset-deg>0.0</offset-deg>
+  <center>
+   <x-m> -7.90 </x-m>
+   <y-m> -0.90 </y-m>
+   <z-m>  2.89 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>fuel_lever_knob_PI</object-name>
+  <object-name>fuel_lever_arm_PI</object-name>
+  <property>controls/fuel/left-tank-cock[2]</property>
+  <factor>90.0</factor>
+  <offset-deg>-45.0</offset-deg>
+  <center>
+   <x-m> -8.20 </x-m>
+   <y-m> -0.40 </y-m>
+   <z-m>  2.40 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>fuel_lever_knob_PF</object-name>
+  <object-name>fuel_lever_arm_PF</object-name>
+  <property>controls/fuel/left-tank-cock[3]</property>
+  <factor>90.0</factor>
+  <offset-deg>-45.0</offset-deg>
+  <center>
+   <x-m> -8.20 </x-m>
+   <y-m> -0.40 </y-m>
+   <z-m>  2.40 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>fuel_lever_knob_B2</object-name>
+  <object-name>fuel_lever_arm_B2</object-name>
+  <property>controls/fuel/balance-cock</property>
+  <factor>90.0</factor>
+  <offset-deg>-45.0</offset-deg>
+  <center>
+   <x-m> -8.20 </x-m>
+   <y-m> -0.40 </y-m>
+   <z-m>  2.40 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>fuel_lever_knob_SF</object-name>
+  <object-name>fuel_lever_arm_SF</object-name>
+  <property>controls/fuel/right-tank-cock[3]</property>
+  <factor>90.0</factor>
+  <offset-deg>-45.0</offset-deg>
+  <center>
+   <x-m> -8.20 </x-m>
+   <y-m> -0.40 </y-m>
+   <z-m>  2.40 </z-m>
+  </center>
+  <axis>
+   <x> 0.0 </x>
+   <y> 1.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+
+
+ <!-- LOD -->
+ <animation> 
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>500</max-m>
+ </animation>
+
+</PropertyList>

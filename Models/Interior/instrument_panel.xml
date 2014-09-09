@@ -1,0 +1,573 @@
+<?xml version="1.0"?>
+<!--
+  Short S.23 Empire flying boat for FlightGear.
+
+  Copyright (C) 2008 - 2012  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <!-- No main model. -->
+ <!-- The origin is in the middle of the lower edge of the panel. -->
+ <!-- x/y/z == back/right/up -->
+
+ <!-- Starter buttons. -->
+ <model>
+  <name>Starter Port Outer</name>
+  <path>Aircraft/Short_Empire/Instruments/RotaxN5EBStarterButton/starter_button.xml</path>
+  <offsets>
+   <pitch-deg>-60.0</pitch-deg>
+   <x-m>-0.043</x-m>
+   <y-m>-0.105</y-m>
+   <z-m> 0.490</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <button-pressed-norm type="string">controls/engines/engine[0]/starter-cmd</button-pressed-norm>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+ <model>
+  <name>Starter Port Inner</name>
+  <path>Aircraft/Short_Empire/Instruments/RotaxN5EBStarterButton/starter_button.xml</path>
+  <offsets>
+   <pitch-deg>-60.0</pitch-deg>
+   <x-m>-0.043</x-m>
+   <y-m>-0.035</y-m>
+   <z-m> 0.490</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <button-pressed-norm type="string">controls/engines/engine[1]/starter-cmd</button-pressed-norm>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+ <model>
+  <name>Starter Starboard Inner</name>
+  <path>Aircraft/Short_Empire/Instruments/RotaxN5EBStarterButton/starter_button.xml</path>
+  <offsets>
+   <pitch-deg>-60.0</pitch-deg>
+   <x-m>-0.043</x-m>
+   <y-m> 0.035</y-m>
+   <z-m> 0.490</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <button-pressed-norm type="string">controls/engines/engine[2]/starter-cmd</button-pressed-norm>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+ <model>
+  <name>Starter Starboard Outer</name>
+  <path>Aircraft/Short_Empire/Instruments/RotaxN5EBStarterButton/starter_button.xml</path>
+  <offsets>
+   <pitch-deg>-60.0</pitch-deg>
+   <x-m>-0.043</x-m>
+   <y-m> 0.105</y-m>
+   <z-m> 0.490</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <button-pressed-norm type="string">controls/engines/engine[3]/starter-cmd</button-pressed-norm>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <!-- Preliminary pilot instruments. Top-bottom, left-right  -->
+ <!--
+    "The port side panel of the dashboard on the Captain's side,
+    contained the following instruments:
+    - 3 1/4 in. (82.5 mm.) K.B.B. Kollsman sensitive altimeter.
+    - 2 1/2 in. (63.5 mm.) Sperry gyro compass.
+    - 3 1/2 in. (89 mm.) Sperry artificial horizon.
+    - Smiths AV 875 fore and aft level.
+    - 3 3/4 in. (95.25 mm.) Smiths AV 549 air speed indicator (miles per hour).
+    - Turn and bank indicator.
+    - Rate of climb indicator.
+    - Trip clock.
+    The Type PL 4 compass was immediately aft of the panel, on the
+    extreme left hand side. Compasses were Smith PL 4s, Hughes P/4/11s,
+    or Kelvin Bottomly and Laird KBB 4s." [Cassidy:2004:FE](pp.70-71)
+ -->
+
+ <model>
+  <name>Pilot Altimeter</name>
+  <path>Aircraft/Short_Empire/Instruments/Altimeter/altimeter.xml</path>
+  <offsets>
+   <x-m> 0.010</x-m>
+   <y-m>-0.580</y-m>
+   <z-m> 0.290</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <indicated-altitude-ft>instrumentation/altimeter[0]/indicated-altitude-ft</indicated-altitude-ft>
+    <setting-inhg>instrumentation/altimeter[0]/setting-inhg</setting-inhg>
+    <light-power-W>systems/electrical/lamps/instruments/altimeter-power-W[0]</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Pilot Directional Indicator</name>
+  <path>Aircraft/Short_Empire/Instruments/DI/directional_indicator.xml</path>
+  <offsets>
+   <x-m> 0.010</x-m>
+   <y-m>-0.470</y-m>
+   <z-m> 0.330</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <light-power-W>systems/electrical/lamps/instruments/directional-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Pilot Attitude Indicator</name>
+  <path>Aircraft/Short_Empire/Instruments/AttitudeIndicator/attitude.xml</path>
+  <offsets>
+   <x-m> 0.010</x-m>
+   <y-m>-0.340</y-m>
+   <z-m> 0.310</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <light-power-W>systems/electrical/lamps/instruments/attitude-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Pilot Fore and Aft Level</name>
+  <path>Aircraft/Short_Empire/Instruments/SmithForeAftLevel/smith_fore_aft_level.xml</path>
+  <offsets>
+   <x-m> 0.005</x-m>
+   <y-m>-0.250</y-m>
+   <z-m> 0.310</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <light-power-W>systems/electrical/lamps/instruments/fore-aft-level-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <!-- Second row according to drawing.
+      Canopus had the first three instruments aligned with the above row.
+ -->
+
+ <model>
+  <name>Pilot Airspeed Indicator</name>
+  <path>Aircraft/Short_Empire/Instruments/ASI/asi.xml</path>
+  <offsets>
+   <x-m> 0.010</x-m>
+   <y-m>-0.640</y-m>
+   <z-m> 0.180</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <indicated-speed-kt>instrumentation/airspeed-indicator[0]/indicated-speed-kt</indicated-speed-kt>
+    <light-power-W>systems/electrical/lamps/instruments/asi-power-W[0]</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Pilot Turn Coordinator</name>
+  <path>Aircraft/Short_Empire/Instruments/TurnIndicator/turn.xml</path>
+  <offsets>
+   <x-m> 0.010</x-m>
+   <y-m>-0.520</y-m>
+   <z-m> 0.180</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <indicated-turn-rate>instrumentation/turn-indicator[0]/indicated-turn-rate</indicated-turn-rate>
+    <indicated-slip-skid>instrumentation/slip-skid-ball[0]/indicated-slip-skid</indicated-slip-skid>
+    <light-power-W>systems/electrical/lamps/instruments/turn-power-W[0]</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Pilot Vertical Speed Indicator</name>
+  <path>Aircraft/Short_Empire/Instruments/VerticalSpeedIndicator/vsi.xml</path>
+  <offsets>
+   <x-m> 0.010</x-m>
+   <y-m>-0.390</y-m>
+   <z-m> 0.180</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <light-power-W>systems/electrical/lamps/instruments/vsi-power-W</light-power-W>
+   </params>
+  </overlay>  
+ </model>
+
+ <model>
+  <name>Pilot Clock</name>
+  <path>Aircraft/Short_Empire/Instruments/Clock/clock.xml</path>
+  <offsets>
+   <x-m> 0.010</x-m>
+   <y-m>-0.270</y-m>
+   <z-m> 0.180</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <light-power-W>systems/electrical/lamps/instruments/clock-power-W</light-power-W>
+   </params>
+  </overlay>  
+ </model>
+
+<!-- Unknown instrument on drawing. Canopus had a clock here.
+ <model>
+  <name>Pilot Clock</name>
+  <path>Aircraft/Spitfire/Models/clock.xml</path>
+  <offsets>
+   <x-m> 0.010</x-m>
+   <y-m>-0.425</y-m>
+   <z-m> 0.080</z-m>
+  </offsets>
+ </model>
+-->
+
+ <!-- Preliminary center panel instruments. Top-bottom, left-right  -->
+ <!--
+    "The centre panel of the dashboard, immediately over the throttle
+    box, contained the control panel for which ever type of automatic
+    pilot was fitted to the 'boat - Sperry Gyropilots all the 'boats
+    with the exception of the three S.30 'A' 'boats, which were
+    equipped with Smith Mark 1A automatic pilots." [Cassidy:2004:FE](pp.72)
+ -->
+
+ <model>
+  <name>Magneto switches engine 1</name>
+  <path>Aircraft/Short_Empire/Instruments/magneto_switch.xml</path>
+  <offsets>
+   <x-m>-0.019</x-m>
+   <y-m>-0.114</y-m>
+   <z-m> 0.417</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <magnetos>controls/engines/engine[0]/magnetos</magnetos>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Magneto switches engine 2</name>
+  <path>Aircraft/Short_Empire/Instruments/magneto_switch.xml</path>
+  <offsets>
+   <x-m>-0.019</x-m>
+   <y-m>-0.038</y-m>
+   <z-m> 0.417</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <magnetos>controls/engines/engine[1]/magnetos</magnetos>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Magneto switches engine 3</name>
+  <path>Aircraft/Short_Empire/Instruments/magneto_switch.xml</path>
+  <offsets>
+   <x-m>-0.019</x-m>
+   <y-m> 0.038</y-m>
+   <z-m> 0.417</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <magnetos>controls/engines/engine[2]/magnetos</magnetos>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Magneto switches engine 4</name>
+  <path>Aircraft/Short_Empire/Instruments/magneto_switch.xml</path>
+  <offsets>
+   <x-m>-0.019</x-m>
+   <y-m> 0.114</y-m>
+   <z-m> 0.417</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <magnetos>controls/engines/engine[3]/magnetos</magnetos>
+    <lighting-norm>systems/electrical/lamps/flight-deck/roof-power-norm[0]</lighting-norm>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Sperry A-2 Gyropilot</name>
+  <path>Aircraft/Short_Empire/Instruments/SperryA-2Gyropilot/Sperry_A-2.xml</path>
+  <offsets>
+   <x-m>-0.030</x-m>
+   <y-m> 0.000</y-m>
+   <z-m> 0.150</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <light-power-W>systems/electrical/lamps/instruments/autopilot-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <!-- Preliminary copilot instruments. Top-bottom, left-right  -->
+ <!--
+    "The starboard side panel of the dashboard on the First Officer's
+    side, for 'boats with Sperry automatic pilot, contained the
+    following instruments:
+    - Four 2.12 in. (54 mm.) oil pressure gauges (one for each engine).
+    - Two Record Cirscale engine speed indicators (one for each pair of
+      engines, port and starboard).
+    - Smiths turn and bank indicator.
+    - 3 3/4 in. (95.25 mm.) Smiths AV 549 air speed indicator (miles per hour).
+    - 3 3/4 in. (95.25 mm.) Smiths AV 567 static altimeter.
+    - Two boost gauges (port and starboard engine pairs) and two engine
+      selector cocks. Later aircraft were fitted with a boost gauge for
+      each individual engine." [Cassidy:2004:FE](pp.71)
+
+    "The First Officer's compass was of a similar type and in a
+    similar position to the Captain's compass." [Cassidy:2004:FE](pp.72)
+ -->
+
+ <model>
+  <name>Oil Pressure Port Outer</name>
+  <path>Aircraft/Short_Empire/Instruments/OilPressure/oil_pressure.xml</path>
+  <offsets>
+   <x-m> 0.000</x-m>
+   <y-m> 0.250</y-m>
+   <z-m> 0.380</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <pressure-psi>engines/engine[0]/oil-pressure-psi</pressure-psi>
+    <serviceable>instrumentation/oil-pressure-gauge[0]/serviceable</serviceable>
+    <light-power-W>systems/electrical/lamps/instruments/oil-pressure-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Oil Pressure Port Inner</name>
+  <path>Aircraft/Short_Empire/Instruments/OilPressure/oil_pressure.xml</path>
+  <offsets>
+   <x-m> 0.000</x-m>
+   <y-m> 0.320</y-m>
+   <z-m> 0.380</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <pressure-psi>engines/engine[1]/oil-pressure-psi</pressure-psi>
+    <serviceable>instrumentation/oil-pressure-gauge[1]/serviceable</serviceable>
+    <light-power-W>systems/electrical/lamps/instruments/oil-pressure-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Oil Pressure Starboard Inner</name>
+  <path>Aircraft/Short_Empire/Instruments/OilPressure/oil_pressure.xml</path>
+  <offsets>
+   <x-m> 0.000</x-m>
+   <y-m> 0.390</y-m>
+   <z-m> 0.380</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <pressure-psi>engines/engine[2]/oil-pressure-psi</pressure-psi>
+    <serviceable>instrumentation/oil-pressure-gauge[2]/serviceable</serviceable>
+    <light-power-W>systems/electrical/lamps/instruments/oil-pressure-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Oil Pressure Starboard Outer</name>
+  <path>Aircraft/Short_Empire/Instruments/OilPressure/oil_pressure.xml</path>
+  <offsets>
+   <x-m> 0.000</x-m>
+   <y-m> 0.460</y-m>
+   <z-m> 0.380</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <pressure-psi>engines/engine[3]/oil-pressure-psi</pressure-psi>
+    <serviceable>instrumentation/oil-pressure-gauge[3]/serviceable</serviceable>
+    <light-power-W>systems/electrical/lamps/instruments/oil-pressure-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Port RPM Indicator</name>
+  <path>Aircraft/Short_Empire/Instruments/RevCounter/rev_counter.xml</path>
+  <offsets>
+   <x-m> 0.001</x-m>
+   <y-m> 0.275</y-m>
+   <z-m> 0.265</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <rpm-left>engines/engine[0]/rpm</rpm-left>
+    <rpm-right>engines/engine[1]/rpm</rpm-right>
+    <serviceable>instrumentation/engine-rpm-indicator[0]/serviceable</serviceable>
+    <light-power-W>systems/electrical/lamps/instruments/engine-speed-power-W[0]</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Starboard RPM Indicator</name>
+  <path>Aircraft/Short_Empire/Instruments/RevCounter/rev_counter.xml</path>
+  <offsets>
+   <x-m> 0.001</x-m>
+   <y-m> 0.395</y-m>
+   <z-m> 0.265</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <rpm-left>engines/engine[2]/rpm</rpm-left>
+    <rpm-right>engines/engine[3]/rpm</rpm-right>
+    <serviceable>instrumentation/engine-rpm-indicator[1]/serviceable</serviceable>
+    <light-power-W>systems/electrical/lamps/instruments/engine-speed-power-W[1]</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Copilot Turn Coordinator</name>
+  <path>Aircraft/Short_Empire/Instruments/TurnIndicator/turn.xml</path>
+  <offsets>
+   <x-m> 0.010</x-m>
+   <y-m> 0.515</y-m>
+   <z-m> 0.275</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <indicated-turn-rate>instrumentation/turn-indicator[1]/indicated-turn-rate</indicated-turn-rate>
+    <indicated-slip-skid>instrumentation/slip-skid-ball[1]/indicated-slip-skid</indicated-slip-skid>
+    <light-power-W>systems/electrical/lamps/instruments/turn-power-W[1]</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Copilot Airspeed Indicator</name>
+  <path>Aircraft/Short_Empire/Instruments/ASI/asi.xml</path>
+  <offsets>
+   <x-m> 0.010</x-m>
+   <y-m> 0.630</y-m>
+   <z-m> 0.275</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <indicated-speed-kt>instrumentation/airspeed-indicator[1]/indicated-speed-kt</indicated-speed-kt>
+    <light-power-W>systems/electrical/lamps/instruments/asi-power-W[1]</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Copilot Altimeter</name>
+  <path>Aircraft/Short_Empire/Instruments/Altimeter/altimeter.xml</path>
+  <offsets>
+   <x-m> 0.010</x-m>
+   <y-m> 0.680</y-m>
+   <z-m> 0.160</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <indicated-altitude-ft>instrumentation/altimeter[1]/indicated-altitude-ft</indicated-altitude-ft>
+    <setting-inhg>instrumentation/altimeter[1]/setting-inhg</setting-inhg>
+    <light-power-W>systems/electrical/lamps/instruments/altimeter-power-W[1]</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Boost Port Outer</name>
+  <path>Aircraft/Short_Empire/Instruments/BoostGauge/boost_gauge.xml</path>
+  <offsets>
+   <x-m> 0.000</x-m>
+   <y-m> 0.260</y-m>
+   <z-m> 0.150</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <boost-psi>fdm/jsbsim/propulsion/engine[0]/boost-psi</boost-psi>
+    <serviceable>instrumentation/boost-gauge[0]/serviceable</serviceable>
+    <light-power-W>systems/electrical/lamps/instruments/boost-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Boost Port Inner</name>
+  <path>Aircraft/Short_Empire/Instruments/BoostGauge/boost_gauge.xml</path>
+  <offsets>
+   <x-m> 0.000</x-m>
+   <y-m> 0.320</y-m>
+   <z-m> 0.100</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <boost-psi>fdm/jsbsim/propulsion/engine[1]/boost-psi</boost-psi>
+    <serviceable>instrumentation/boost-gauge[1]/serviceable</serviceable>
+    <light-power-W>systems/electrical/lamps/instruments/boost-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Boost Starboard Inner</name>
+  <path>Aircraft/Short_Empire/Instruments/BoostGauge/boost_gauge.xml</path>
+  <offsets>
+   <x-m> 0.000</x-m>
+   <y-m> 0.390</y-m>
+   <z-m> 0.100</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <boost-psi>fdm/jsbsim/propulsion/engine[2]/boost-psi</boost-psi>
+    <serviceable>instrumentation/boost-gauge[2]/serviceable</serviceable>
+    <light-power-W>systems/electrical/lamps/instruments/boost-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <model>
+  <name>Boost Starboard Outer</name>
+  <path>Aircraft/Short_Empire/Instruments/BoostGauge/boost_gauge.xml</path>
+  <offsets>
+   <x-m> 0.000</x-m>
+   <y-m> 0.450</y-m>
+   <z-m> 0.150</z-m>
+  </offsets>
+  <overlay>
+   <params>
+    <boost-psi>fdm/jsbsim/propulsion/engine[3]/boost-psi</boost-psi>
+    <serviceable>instrumentation/boost-gauge[3]/serviceable</serviceable>
+    <light-power-W>systems/electrical/lamps/instruments/boost-power-W</light-power-W>
+   </params>
+  </overlay>
+ </model>
+
+ <animation> 
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>10</max-m>
+ </animation>
+
+</PropertyList>
